@@ -4,7 +4,8 @@
   "description": "Sanrakshan India - NGO Website",
   "scripts": {
     "optimize": "node optimize-images.js",
-    "find-large": "powershell -ExecutionPolicy Bypass -File find-large-files.ps1"
+    "find-large": "powershell -ExecutionPolicy Bypass -File find-large-files.ps1",
+    "deploy": "wrangler deploy"
   },
   "keywords": [
     "ngo",
