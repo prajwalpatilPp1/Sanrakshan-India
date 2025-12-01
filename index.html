@@ -155,32 +155,32 @@
       <!-- Card 1 -->
       <div class="impact-card flex-shrink-0 impact-card-1">
         <div class="d-flex flex-column justify-content-center align-items-center h-100 w-100 text-white impact-card-overlay">
-          <h3 class="impact-number text-white"><span class="counter">1200</span>+</h3>
-          <p class="impact-text text-center mb-0">Children Supported</p>
+          <h3 class="impact-number text-white"><span class="counter" data-target="1000">0</span>+</h3>
+          <p class="impact-text text-center mb-0">Vulnerable Children Supported through Child Care Institutions</p>
         </div>
       </div>
 
       <!-- Card 2 -->
       <div class="impact-card flex-shrink-0 impact-card-2">
         <div class="d-flex flex-column justify-content-center align-items-center h-100 w-100 text-white impact-card-overlay">
-          <h3 class="impact-number text-white"><span class="counter">100</span>+</h3>
-          <p class="impact-text text-center mb-0">Young Adults Empowered</p>
+          <h3 class="impact-number text-white"><span class="counter" data-target="100">0</span>+</h3>
+          <p class="impact-text text-center mb-0">Young Adults Empowered through Skill Training Programs</p>
         </div>
       </div>
 
       <!-- Card 3 -->
       <div class="impact-card flex-shrink-0 impact-card-3">
         <div class="d-flex flex-column justify-content-center align-items-center h-100 w-100 text-white impact-card-overlay">
-          <h3 class="impact-number text-white"><span class="counter">150</span>+</h3>
-          <p class="impact-text text-center mb-0">Children Protected (SJPU)</p>
+          <h3 class="impact-number text-white"><span class="counter" data-target="150">0</span>+</h3>
+          <p class="impact-text text-center mb-0">Children Protected through Special Juvenile Police Unit (SJPU)</p>
         </div>
       </div>
 
       <!-- Card 4 -->
       <div class="impact-card flex-shrink-0 impact-card-4">
         <div class="d-flex flex-column justify-content-center align-items-center h-100 w-100 text-white impact-card-overlay">
-          <h3 class="impact-number text-white"><span class="counter">500</span>+</h3>
-          <p class="impact-text text-center mb-0">Community Members Engaged</p>
+          <h3 class="impact-number text-white"><span class="counter" data-target="500">0</span>+</h3>
+          <p class="impact-text text-center mb-0">Community Members Engaged through Awareness and Outreach Programs</p>
         </div>
       </div>
 
@@ -515,6 +515,12 @@
                         customAmountInput.value = '';
                     }
                 });
+            });
+
+            // Counter animation for Our Impact section
+            $('.counter').counterUp({
+                delay: 10,
+                time: 2000
             });
         });
     </script>
