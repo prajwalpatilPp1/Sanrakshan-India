@@ -1,0 +1,11 @@
+img-backup/
+node_modules/
+.git/
+.vscode/
+.kiro/
+*.md
+*.ps1
+optimize-images.js
+package.json
+package-lock.json
+find-large-files.ps1
