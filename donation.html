@@ -151,75 +151,77 @@
 
 
     <!-- Donate Start -->
-<div id="donate-box" class="container-fluid donate py-5">
-    <div class="container">
-        <div class="row g-0">
-            <!-- Text Section -->
-            <div class="col-lg-7 donate-text bg-light py-5 wow fadeIn" data-wow-delay="0.1s">
-                <div class="d-flex flex-column justify-content-center h-100 p-5 wow fadeIn" data-wow-delay="0.3s">
-                    <h1 class="display-6 mb-4" style="color:#0a4275;">Let's Donate to Needy People for Better Lives</h1>
-                    <p class="fs-5 mb-0 text-dark">Through your donations, we spread kindness and support to children, families, and communities struggling to find stability.</p>
+    <div id="donate-box" class="container-fluid donate py-5">
+        <div class="container">
+            <div class="row g-0 shadow-lg">
+                <!-- Text Section -->
+                <div class="col-lg-7 donate-text bg-light py-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex flex-column justify-content-center h-100 p-5 wow fadeIn" data-wow-delay="0.3s">
+                        <h1 class="display-6 mb-4">Let's Donate to Needy People for Better Lives</h1>
+                        <p class="fs-5 mb-0 text-dark">Through your donations, we spread kindness and support to children, families, and communities struggling to find stability.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Form Section -->
-            <div class="col-lg-5 donate-form py-5 text-center wow fadeIn" data-wow-delay="0.5s" style="background-color:#0a4275; border-radius: 0 15px 15px 0;">
-                <div class="h-100 p-5">
-                    <form id="donationForm">
-                        <div class="row g-3">
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="donorName" name="name" placeholder="Your Name" autocomplete="name" required style="background-color:#ffffff10; color:#fff; border:none;">
-                                    <label for="donorName" style="color:#fff;">Your Name</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="donorEmail" name="email" placeholder="Your Email" autocomplete="email" required style="background-color:#ffffff10; color:#fff; border:none;">
-                                    <label for="donorEmail" style="color:#fff;">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="tel" class="form-control" id="donorPhone" name="phone" placeholder="Your Phone" autocomplete="tel" required style="background-color:#ffffff10; color:#fff; border:none;">
-                                    <label for="donorPhone" style="color:#fff;">Your Phone</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <!-- Custom Amount Input -->
-                                <div class="form-floating mt-3">
-                                    <input type="number" class="form-control" id="customAmount" name="amount" placeholder="Enter amount (₹)" min="10" style="background-color:#ffffff10; color:#fff; border:none;">
-                                    <label for="customAmount" style="color:#fff;">Enter amount (₹)</label>
-                                </div>
-                                <div class="btn-group mt-3" role="group" aria-label="Donation Amount">
-                                    <input type="radio" class="btn-check" name="donation_amount" id="btnradio1" value="500" autocomplete="off">
-                                    <label class="btn btn-outline-light" for="btnradio1">₹500</label>
+                <!-- Form Section -->
+                <div class="col-lg-5 donate-form py-5 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <div class="h-100 p-5">
+                        <form id="donationForm">
+                            <div class="row g-3">
 
-                                    <input type="radio" class="btn-check" name="donation_amount" id="btnradio2" value="1000" autocomplete="off">
-                                    <label class="btn btn-outline-light" for="btnradio2">₹1000</label>
-
-                                    <input type="radio" class="btn-check" name="donation_amount" id="btnradio3" value="2000" autocomplete="off">
-                                    <label class="btn btn-outline-light" for="btnradio3">₹2000</label>
-
-                                    <input type="radio" class="btn-check" name="donation_amount" id="btnradio4" value="5000" autocomplete="off">
-                                    <label class="btn btn-outline-light" for="btnradio4">₹5000</label>
+                                <!-- Name -->
+                                <div class="col-12">
+                                    <input type="text" class="form-control" id="donorName" name="name" placeholder="Enter your name" autocomplete="name" required>
                                 </div>
+
+                                <!-- Email -->
+                                <div class="col-12">
+                                    <input type="email" class="form-control" id="donorEmail" name="email" placeholder="Enter your email" autocomplete="email" required>
+                                </div>
+
+                                <!-- Phone -->
+                                <div class="col-12">
+                                    <input type="tel" class="form-control" id="donorPhone" name="phone" placeholder="Enter your phone" autocomplete="tel" required>
+                                </div>
+
+                                <!-- Custom Amount -->
+                                <div class="col-12">
+                                    <input type="number" class="form-control" id="customAmount" name="amount" placeholder="Enter amount (₹)" min="10">
+                                </div>
+
+                                <!-- Preset Buttons -->
+                                <div class="col-12 mt-2">
+                                    <div class="btn-group w-100" role="group" aria-label="Donation amount presets">
+                                        <input type="radio" class="btn-check" name="donation_amount" id="amount500" value="500" autocomplete="off">
+                                        <label class="btn btn-outline-light" for="amount500">₹500</label>
+                                        
+                                        <input type="radio" class="btn-check" name="donation_amount" id="amount1000" value="1000" autocomplete="off">
+                                        <label class="btn btn-outline-light" for="amount1000">₹1000</label>
+                                        
+                                        <input type="radio" class="btn-check" name="donation_amount" id="amount2000" value="2000" autocomplete="off">
+                                        <label class="btn btn-outline-light" for="amount2000">₹2000</label>
+                                        
+                                        <input type="radio" class="btn-check" name="donation_amount" id="amount5000" value="5000" autocomplete="off">
+                                        <label class="btn btn-outline-light" for="amount5000">₹5000</label>
+                                    </div>
+                                </div>
+
+                                <!-- Payment Buttons -->
+                                <div class="col-12 mt-3">
+                                    <button class="btn btn-light btn-donate-now py-3 w-100 fw-bold mb-2" type="button" id="donateBtn">
+                                        <i class="fas fa-credit-card me-2"></i>Pay Online (Razorpay)
+                                    </button>
+                                    <button class="btn btn-outline-light py-3 w-100 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#bankDetailsModal">
+                                        <i class="fas fa-university me-2"></i>Bank Transfer (Free)
+                                    </button>
+                                </div>
+
                             </div>
-                            <div class="col-12">
-                                <button class="btn btn-light py-3 w-100 fw-bold mb-2" type="button" id="donateBtn" style="color:#0a4275; transition: 0.3s;" onmouseover="this.style.backgroundColor='#ffffffaa';" onmouseout="this.style.backgroundColor='white';">
-                                    <i class="fas fa-credit-card me-2"></i>Pay Online (Razorpay)
-                                </button>
-                                <button class="btn btn-outline-light py-3 w-100 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#bankDetailsModal">
-                                    <i class="fas fa-university me-2"></i>Bank Transfer (Free)
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
     <!-- Donate End -->
 
     <!-- Bank Details Modal -->
