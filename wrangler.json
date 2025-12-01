@@ -2,6 +2,16 @@
   "name": "sanrakshan-india",
   "compatibility_date": "2025-12-01",
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "ignore": [
+      ".git/**",
+      ".git",
+      "node_modules/**",
+      "img-backup/**",
+      "*.md",
+      "*.ps1",
+      "package.json",
+      "package-lock.json"
+    ]
   }
 }
