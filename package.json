@@ -1,22 +1,21 @@
 {
-  "name": "sanrakshan-website-optimizer",
+  "name": "sanrakshan-website",
   "version": "1.0.0",
-  "description": "Image optimization tools for Sanrakshan India website",
-  "main": "optimize-images.js",
+  "description": "Sanrakshan India - NGO Website",
   "scripts": {
     "optimize": "node optimize-images.js",
     "find-large": "powershell -ExecutionPolicy Bypass -File find-large-files.ps1"
   },
   "keywords": [
-    "image-optimization",
-    "performance",
-    "website"
+    "ngo",
+    "charity",
+    "children",
+    "india"
   ],
   "author": "Sanrakshan India",
   "license": "MIT",
   "dependencies": {
     "sharp": "^0.33.0",
     "fs-extra": "^11.2.0"
-  },
-  "devDependencies": {}
+  }
 }
