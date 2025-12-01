@@ -1,6 +1,28 @@
-# Razorpay Payment Gateway Setup
+# Payment Gateway Setup for Donations
 
-## Steps to Enable Donations:
+## Two Payment Options Available:
+
+### Option 1: FREE - Direct Bank Transfer/UPI (Recommended for NGOs)
+**Advantages:**
+- ✅ 100% of donation reaches you
+- ✅ No transaction fees
+- ✅ No setup required
+- ✅ Works for all amounts
+
+**Setup:**
+1. Update bank details in `donation.html` (search for "Bank Account Details")
+2. Replace placeholder text with your actual:
+   - Account Name
+   - Account Number
+   - IFSC Code
+   - Bank Name
+   - Branch
+3. Add your UPI QR code image as `img/upi-qr-code.png`
+4. Update UPI ID (e.g., `yourname@paytm`)
+
+### Option 2: PAID - Razorpay Online Payment (2% + GST fee)
+
+## Steps to Enable Razorpay:
 
 ### 1. Create Razorpay Account
 1. Go to https://razorpay.com/

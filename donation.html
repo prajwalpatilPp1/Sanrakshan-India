@@ -275,8 +275,11 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-light py-3 w-100 fw-bold" type="button" id="donateBtn" style="color:#0a4275; transition: 0.3s;" onmouseover="this.style.backgroundColor='#ffffffaa';" onmouseout="this.style.backgroundColor='white';">
-                                    <i class="fas fa-heart me-2"></i>Donate Now
+                                <button class="btn btn-light py-3 w-100 fw-bold mb-2" type="button" id="donateBtn" style="color:#0a4275; transition: 0.3s;" onmouseover="this.style.backgroundColor='#ffffffaa';" onmouseout="this.style.backgroundColor='white';">
+                                    <i class="fas fa-credit-card me-2"></i>Pay Online (Razorpay)
+                                </button>
+                                <button class="btn btn-outline-light py-3 w-100 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#bankDetailsModal">
+                                    <i class="fas fa-university me-2"></i>Bank Transfer (Free)
                                 </button>
                             </div>
                         </div>
@@ -287,6 +290,70 @@
     </div>
 </div>
     <!-- Donate End -->
+
+    <!-- Bank Details Modal -->
+    <div class="modal fade" id="bankDetailsModal" tabindex="-1" aria-labelledby="bankDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="bankDetailsModalLabel"><i class="fas fa-university me-2"></i>Bank Transfer Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <h6 class="text-primary">100% of your donation reaches us - No transaction fees!</h6>
+                    </div>
+                    
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h6 class="card-title text-primary"><i class="fas fa-building me-2"></i>Bank Account Details</h6>
+                            <table class="table table-borderless mb-0">
+                                <tr>
+                                    <td class="fw-bold">Account Name:</td>
+                                    <td>Sanrakshan India</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Account Number:</td>
+                                    <td><span class="text-primary">XXXX XXXX XXXX</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">IFSC Code:</td>
+                                    <td><span class="text-primary">XXXXXX</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Bank Name:</td>
+                                    <td>Your Bank Name</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Branch:</td>
+                                    <td>Your Branch</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h6 class="card-title text-primary"><i class="fas fa-qrcode me-2"></i>UPI Payment</h6>
+                            <p class="mb-2">Scan QR Code or use UPI ID:</p>
+                            <div class="bg-light p-3 rounded mb-2">
+                                <!-- Add your UPI QR code image here -->
+                                <img src="img/upi-qr-code.png" alt="UPI QR Code" class="img-fluid" style="max-width: 200px;" onerror="this.style.display='none'">
+                                <p class="mt-2 mb-0"><strong>UPI ID:</strong> <span class="text-primary">sanrakshan@upi</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info mt-3 mb-0">
+                        <small><i class="fas fa-info-circle me-2"></i>After transfer, please email your receipt to <strong>donations@sanrakshanindia.org</strong> for 80G certificate</small>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
         
 
 <!-- Footer Placeholder -->
