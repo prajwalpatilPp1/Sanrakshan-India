@@ -1,0 +1,108 @@
+/* From Uiverse.io by alexmaracinaru */
+.new-team-card {
+    width: 250px; /* Set a fixed width */
+    max-width: 250px;
+    height: 320px;
+    background: linear-gradient(to bottom, #0a4275 0%, #0a4275 25%, white 25%, white 100%); /* Reset gradient */
+    background-size: 100% 200%; /* Double the height for animation */
+    background-position: 0 0; /* Start with the final state */
+    border-radius: 15px;
+    box-shadow: none;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: bump-in 1.2s cubic-bezier(0.38, 0.1, 0.36, 1.5) 0.5s forwards;
+}
+
+@keyframes bump-in {
+    0% { background-position: 0 0; }
+    50% { background-position: 0 100%; }
+    100% { background-position: 0 0; }
+}
+
+
+
+.new-team-card .card-border-top {
+    display: none;
+}
+
+.new-team-card:hover {
+    box-shadow: 0 8px 25px rgba(10, 66, 117, 0.15);
+    transform: translateY(-5px);
+}
+
+.new-team-card .name {
+    font-weight: 600;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #0a4275;
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+    font-size: 18px;
+    min-height: 50px; /* Ensure uniform height for name */
+}
+
+/* Keep member names on a single line and gracefully truncate long names */
+.new-team-card .name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;
+}
+
+.new-team-card .job {
+    font-weight: 400;
+    color: #555;
+    display: block;
+    text-align: center;
+    padding-top: 3px;
+    font-size: 12px;
+    min-height: 36px; /* Ensure uniform height for job title */
+}
+
+.new-team-card .img-container {    width: 110px; /* Increased size */
+    height: 110px; /* Increased size */
+    margin: auto;
+    margin-top: 25px;
+}
+
+.new-team-card .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make image round */
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px #0a4275;
+}
+
+.new-team-card .read-more-bio:hover {
+    background: #534bf3;
+}
+
+.new-team-card .uiverse-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto; /* Pushes buttons to the bottom */
+}
+
+.new-team-card .social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0a4275;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.new-team-card .social-icon:hover {
+    background: #05264a;
+}

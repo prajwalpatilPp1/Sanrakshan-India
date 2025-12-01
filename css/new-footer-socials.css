@@ -1,0 +1,77 @@
+/* Footer Social Icons - Square with Slide Down Animation - OPTIMIZED */
+.footer-button-box {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  contain: layout style;
+}
+
+.footer-button-box .social-button {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background: #2c2c2c;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  will-change: background-color, transform;
+  backface-visibility: hidden;
+}
+
+.footer-button-box .social-button .icon {
+  width: 22px;
+  height: 22px;
+  fill: #fff;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+/* Slide down from top animation on hover */
+.footer-button-box .social-button:hover {
+  transform: translateY(5px) translateZ(0);
+}
+
+.footer-button-box .social-button:hover .icon {
+  animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-50px) translateZ(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) translateZ(0);
+    opacity: 1;
+  }
+}
+
+/* Brand colors on hover */
+.footer-button-box .social-button.facebook:hover {
+  background-color: #1877F2;
+}
+
+.footer-button-box .social-button.twitter:hover {
+  background-color: #000000;
+}
+
+.footer-button-box .social-button.youtube:hover {
+  background-color: #FF0000;
+}
+
+.footer-button-box .social-button.linkedin:hover {
+  background-color: #0072b1;
+}
+
+/* Add a placeholder for the expanded width to prevent layout shift */
+.footer-button-box-wrapper {
+    min-width: 270px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+}

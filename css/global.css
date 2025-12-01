@@ -1,0 +1,803 @@
+/*****************************
+ *    GLOBAL STYLES - SHARED ACROSS ALL PAGES
+ *****************************/
+
+/*****************************
+ *       VARIABLES
+ *****************************/
+:root {
+  --bs-tertiary: #797E88;
+  --color-primary: #0a4275;
+  --color-primary-dark: #05264a;
+}
+
+/*****************************
+ *       GLOBAL RESETS
+ *****************************/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  color: #555;
+  background-color: #ffffff;
+}
+
+/*****************************
+ *       TYPOGRAPHY
+ *****************************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6,
+.section-heading,
+.impact-heading,
+.award-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+/* Standard section headings - matching donation section */
+h1, .display-6 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+h2, .section-heading, .impact-heading, .award-title {
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+  position: relative;
+  display: block;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+h2::after, .section-heading::after, .impact-heading::after, .award-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--color-primary);
+}
+
+/* Standard body text - matching donation section */
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.fs-5 {
+  font-size: 1.25rem !important;
+}
+
+/*****************************
+ *       GLOBAL STYLES
+ *****************************/
+.fw-bold {
+  font-weight: 700 !important;
+}
+
+.fw-medium {
+  font-weight: 600 !important;
+}
+
+.fw-normal {
+  font-weight: 400 !important;
+}
+
+.btn {
+  transition: .5s;
+}
+
+.btn-square {
+  width: 38px;
+  height: 38px;
+}
+
+.btn-sm-square {
+  width: 32px;
+  height: 32px;
+}
+
+.btn-lg-square {
+  width: 48px;
+  height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+}
+
+/*****************************
+ *       SPINNER
+ *****************************/
+#spinner {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s ease-out, visibility 0s linear .5s;
+  z-index: 99999;
+}
+
+#spinner.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .5s ease-out, visibility 0s linear 0s;
+}
+
+/*****************************
+ *       BACK TO TOP
+ *****************************/
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 30px;
+  bottom: 30px;
+  z-index: 99;
+}
+
+/*****************************
+ *       WOW ANIMATIONS
+ *****************************/
+.wow {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-40px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(40px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInDown {
+  animation-name: slideInDown;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/*****************************
+ *       NAVBAR STYLES
+ *****************************/
+/* Topbar Optimization */
+.topbar-black {
+  background-color: var(--color-primary) !important;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+  will-change: transform;
+  contain: layout style;
+}
+
+.topbar-hidden {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+/* Main Navbar Optimization */
+.navbar-main {
+  min-height: 65px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  transition: padding 0.3s ease, min-height 0.3s ease, box-shadow 0.3s ease;
+  will-change: padding, min-height;
+  contain: layout style;
+}
+
+.navbar-main.fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  min-height: 60px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure navbar and its dropdowns always appear above other page content
+   Some cards and components create stacking contexts with high z-index.
+   Give navbar and dropdowns a very high z-index and ensure dropdown-menu
+   is absolutely positioned within the navbar stacking context. */
+.navbar-main {
+  position: relative;
+  z-index: 1100; /* conservative: above default page content but below modals */
+}
+
+.navbar-main.fixed-top {
+  z-index: 1100 !important;
+}
+
+.navbar-main .dropdown-menu {
+  position: absolute; /* ensure it sits above content */
+  z-index: 2000 !important; /* higher than most content but below modals */
+}
+
+/* Logo Optimization */
+.navbar-brand-logo {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo-img {
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.navbar-main.fixed-top .logo-img {
+  transform: scale(0.7);
+  transform-origin: left center;
+}
+
+/* Nav Links Optimization */
+.navbar-main .navbar-nav .nav-link {
+  font-size: 20px;
+  color: var(--color-primary) !important;
+  font-weight: 600;
+  padding: 0px 1rem;
+  transition: color 0.2s ease;
+}
+
+.navbar-main .nav-link:hover,
+.navbar-main .navbar-nav .nav-link.active {
+  color: var(--color-primary-dark) !important;
+}
+
+/* Mobile Optimization */
+@media (max-width: 991.98px) {
+  .navbar-main {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    min-height: 56px;
+  }
+  .navbar-brand-logo {
+    position: static;
+    left: auto;
+    top: auto;
+    margin-bottom: 0.25rem;
+  }
+  .logo-container {
+    width: 96px;
+    height: 80px;
+    margin: 0;
+  }
+  .logo-img {
+    max-width: 90px;
+    max-height: 80px;
+  }
+  .navbar-main.fixed-top .logo-img {
+    transform: scale(1);
+  }
+}
+
+/*****************************
+ *       FOOTER STYLES
+ *****************************/
+.footer {
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 40px 0;
+  font-size: 0.9rem;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.footer .container-fluid {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer h4 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.footer p,
+.footer span {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.footer .btn-square {
+  background: #0a4275;
+  color: #ffffff;
+  border: none;
+  margin-right: 10px;
+  transition: all 0.3s;
+}
+
+.footer .btn-square:hover {
+  background: white;
+  color: var(--color-primary);
+}
+
+.footer .copyright {
+  border-top: 1px solid #ffffff33;
+  padding-top: 20px;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.footer .copyright a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer .copyright a:hover {
+  color: white;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffc107;
+  transform: translateX(5px);
+}
+
+.footer-links .fa-angle-right {
+  transition: transform 0.3s ease;
+}
+
+.business-hours-list li {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.business-hours-list strong {
+  min-width: 80px;
+}
+
+
+/*****************************
+ *   TOPBAR & NAVBAR MOBILE RESPONSIVE
+ *****************************/
+
+/* Tablet and below (992px) */
+@media (max-width: 992px) {
+  /* Topbar */
+  .topbar-black .row {
+    justify-content: center;
+  }
+  
+  .topbar-black .col-12 {
+    justify-content: center !important;
+  }
+  
+  .topbar-black span,
+  .topbar-black a {
+    font-size: 0.85rem;
+  }
+  
+  /* Navbar */
+  .navbar-main .navbar-nav {
+    padding: 1rem 0;
+  }
+  
+  .navbar-main .nav-link {
+    font-size: 16px;
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-main .dropdown-menu {
+    border: none;
+    box-shadow: none;
+    padding-left: 1rem;
+  }
+  
+  .navbar-main .dropdown-item {
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-main .btn-primary {
+    display: block !important;
+    margin: 1rem 1rem 0.5rem;
+    text-align: center;
+  }
+}
+
+/* Mobile landscape and below (768px) */
+@media (max-width: 768px) {
+  /* Topbar */
+  .topbar-black {
+    padding: 0.5rem 0;
+  }
+  
+  .topbar-black .row {
+    padding: 0.25rem 0;
+  }
+  
+  .topbar-black span {
+    font-size: 0.75rem;
+    margin-right: 0.5rem !important;
+  }
+  
+  .topbar-black a {
+    font-size: 0.85rem;
+    margin-right: 0.5rem !important;
+  }
+  
+  .topbar-black a:last-child {
+    margin-right: 0 !important;
+  }
+  
+  .topbar-black .bi {
+    font-size: 0.7rem;
+  }
+  
+  /* Navbar */
+  .navbar-main {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    min-height: 50px;
+  }
+  
+  .logo-container {
+    width: 80px;
+    height: 65px;
+  }
+  
+  .logo-img {
+    max-width: 75px;
+    max-height: 65px;
+  }
+  
+  .navbar-main h4 {
+    font-size: 1rem;
+  }
+  
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .navbar-main .nav-link {
+    font-size: 15px;
+    padding: 0.4rem 0.75rem;
+  }
+  
+  .navbar-main .dropdown-item {
+    font-size: 13px;
+    padding: 0.4rem 0.75rem;
+  }
+}
+
+/* Mobile portrait (576px) */
+@media (max-width: 576px) {
+  /* Topbar - Keep horizontal, reduce spacing */
+  .topbar-black {
+    padding: 0.25rem 0;
+  }
+  
+  .topbar-black .row {
+    padding: 0.15rem 0;
+  }
+  
+  .topbar-black .col-12 {
+    gap: 0.25rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  
+  .topbar-black .col-12::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Contact info - ultra compact */
+  .topbar-black span {
+    font-size: 0.65rem;
+    margin-right: 0.5rem !important;
+    white-space: nowrap;
+  }
+  
+  /* Social icons - smaller */
+  .topbar-black a {
+    font-size: 0.75rem;
+    margin-right: 0.5rem !important;
+  }
+  
+  /* Navbar */
+  .navbar-main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .logo-container {
+    width: 70px;
+    height: 55px;
+  }
+  
+  .logo-img {
+    max-width: 65px;
+    max-height: 55px;
+  }
+  
+  .navbar-main h4 {
+    font-size: 0.9rem;
+  }
+  
+  .navbar-main .nav-link {
+    font-size: 14px;
+    padding: 0.35rem 0.5rem;
+  }
+  
+  .navbar-main .dropdown-item {
+    font-size: 12px;
+    padding: 0.35rem 0.5rem;
+  }
+  
+  .navbar-main .btn-primary {
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Ultra small devices (375px and below) */
+@media (max-width: 375px) {
+  /* Topbar - Hide icons, keep horizontal */
+  .topbar-black {
+    padding: 0.2rem 0;
+  }
+  
+  .topbar-black .row {
+    padding: 0.1rem 0;
+  }
+  
+  .topbar-black span {
+    font-size: 0.6rem;
+    margin-right: 0.4rem !important;
+  }
+  
+  .topbar-black span i {
+    display: none;
+  }
+  
+  .topbar-black a {
+    font-size: 0.7rem;
+    margin-right: 0.4rem !important;
+  }
+  
+  /* Navbar */
+  .navbar-main {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .logo-container {
+    width: 60px;
+    height: 50px;
+  }
+  
+  .logo-img {
+    max-width: 55px;
+    max-height: 50px;
+  }
+  
+  .navbar-main h4 {
+    font-size: 0.85rem;
+  }
+  
+  .navbar-toggler {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.9rem;
+  }
+  
+  .navbar-main .nav-link {
+    font-size: 13px;
+    padding: 0.3rem 0.5rem;
+  }
+  
+  .navbar-main .dropdown-item {
+    font-size: 11px;
+    padding: 0.3rem 0.5rem;
+  }
+  
+  .navbar-main .btn-primary {
+    font-size: 13px;
+    padding: 0.45rem 0.75rem;
+  }
+}
+
+/* Extreme small devices (320px) */
+@media (max-width: 320px) {
+  /* Topbar - Ultra compact, single line */
+  .topbar-black {
+    padding: 0.15rem 0;
+  }
+  
+  .topbar-black .row {
+    padding: 0.1rem 0;
+  }
+  
+  .topbar-black span {
+    font-size: 0.55rem;
+    margin-right: 0.3rem !important;
+  }
+  
+  .topbar-black a {
+    font-size: 0.65rem;
+    margin-right: 0.3rem !important;
+  }
+  
+  .topbar-black a:last-child {
+    margin-right: 0 !important;
+  }
+  
+  /* Navbar */
+  .navbar-main {
+    padding: 0.4rem 0.5rem;
+    min-height: 45px;
+  }
+  
+  .logo-container {
+    width: 50px;
+    height: 45px;
+  }
+  
+  .logo-img {
+    max-width: 48px;
+    max-height: 45px;
+  }
+  
+  .navbar-main h4 {
+    font-size: 0.8rem;
+  }
+  
+  .navbar-toggler {
+    padding: 0.15rem 0.3rem;
+    font-size: 0.85rem;
+  }
+  
+  .navbar-toggler-icon {
+    width: 1.2em;
+    height: 1.2em;
+  }
+  
+  .navbar-main .nav-link {
+    font-size: 12px;
+    padding: 0.25rem 0.4rem;
+  }
+  
+  .navbar-main .dropdown-item {
+    font-size: 10px;
+    padding: 0.25rem 0.4rem;
+  }
+  
+  .navbar-main .btn-primary {
+    font-size: 12px;
+    padding: 0.4rem 0.6rem;
+    margin: 0.75rem 0.5rem 0.25rem;
+  }
+}
+
+/* Ensure navbar dropdowns render above other page content */
+.navbar-main .dropdown,
+.navbar-main .dropdown-menu {
+  z-index: 2000 !important;
+}
+
+/* Mobile: ensure dropdowns still appear above content on small screens */
+@media (max-width: 767.98px) {
+  .navbar-main .dropdown-menu {
+    z-index: 2000 !important;
+  }
+}

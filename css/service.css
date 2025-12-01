@@ -1,0 +1,165 @@
+/**********************************/
+/****** SERVICE PAGE STYLES *******/
+/**********************************/
+
+/* Spinner */
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(rgba(10, 66, 117, .9), rgba(10, 66, 117, .9)), url(../img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--bs-white);
+}
+
+/* Section Title */
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 2px;
+    top: 50%;
+    left: -55px;
+    margin-top: -1px;
+    background: var(--bs-primary);
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 2px;
+    top: 50%;
+    right: -55px;
+    margin-top: -1px;
+    background: var(--bs-primary);
+}
+
+.section-title.text-start::before,
+.section-title.text-end::after {
+    display: none;
+}
+
+/* Service Items */
+.service-item {
+    background: var(--bs-white);
+    border-radius: 10px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    transition: .5s;
+}
+
+.service-item:hover {
+    background: var(--bs-primary);
+    box-shadow: 0 0 45px rgba(0, 0, 0, .15);
+}
+
+.service-item * {
+    transition: .5s;
+}
+
+.service-item:hover * {
+    color: var(--bs-white) !important;
+}
+
+.service-item .btn-square {
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    transition: .5s;
+}
+
+.service-item:hover .btn-square {
+    background: rgba(255, 255, 255, .1);
+}
+
+/* Donate Form Section */
+.donate {
+    background: linear-gradient(rgba(10, 66, 117, .05), rgba(10, 66, 117, .05)), url(../img/carousel-2.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.donate .btn-group .btn-outline-light {
+    border-color: rgba(255, 255, 255, .5);
+}
+
+.donate .btn-group input[type="radio"]:checked + label {
+    background-color: var(--bs-white);
+    border-color: var(--bs-white);
+    color: var(--bs-primary);
+}
+
+/* Testimonial Section */
+.testimonial-carousel .owl-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    margin: 0 12px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bs-primary);
+    background: var(--bs-white);
+    border-radius: 60px;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-nav .owl-prev:hover,
+.testimonial-carousel .owl-nav .owl-next:hover {
+    background: var(--bs-primary);
+    color: var(--bs-white);
+}
+
+.testimonial-carousel .owl-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.testimonial-title {
+    padding: 30px;
+    background: var(--bs-primary);
+    border-radius: 10px;
+}
+
+.testimonial-title * {
+    color: var(--bs-white) !important;
+}
+
+.testimonial-text {
+    padding: 30px;
+    background: var(--bs-light);
+    border-radius: 10px;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+}

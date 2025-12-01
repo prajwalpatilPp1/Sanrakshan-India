@@ -1,0 +1,84 @@
+/**********************************/
+/***** TESTIMONIAL PAGE STYLES ****/
+/**********************************/
+
+/* Spinner */
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(rgba(10, 66, 117, .9), rgba(10, 66, 117, .9)), url(../img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--bs-white);
+}
+
+/* Testimonial Section */
+.testimonial-carousel .owl-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    margin: 0 12px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bs-primary);
+    background: var(--bs-white);
+    border-radius: 60px;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-nav .owl-prev:hover,
+.testimonial-carousel .owl-nav .owl-next:hover {
+    background: var(--bs-primary);
+    color: var(--bs-white);
+}
+
+.testimonial-carousel .owl-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.testimonial-title {
+    padding: 30px;
+    background: var(--bs-primary);
+    border-radius: 10px;
+}
+
+.testimonial-title * {
+    color: var(--bs-white) !important;
+}
+
+.testimonial-text {
+    padding: 30px;
+    background: var(--bs-light);
+    border-radius: 10px;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+}

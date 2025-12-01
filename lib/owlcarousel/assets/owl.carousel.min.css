@@ -1,0 +1,12 @@
+/* Minimal owl.carousel CSS shim to preserve basic layout */
+.owl-carousel{display:block;width:100%;}
+.owl-stage-outer{position:relative;overflow:hidden;width:100%;}
+.owl-stage{display:flex;transition:all .3s ease;align-items:stretch}
+.owl-item{flex:0 0 auto;box-sizing:border-box}
+.owl-item img{display:block;width:100%;height:auto}
+.owl-carousel .owl-nav button{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.5);color:#fff;border:none;padding:8px}
+.owl-carousel .owl-nav .owl-prev{left:10px}
+.owl-carousel .owl-nav .owl-next{right:10px}
+.owl-carousel .owl-dots{text-align:center;margin-top:10px}
+.owl-carousel .owl-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#ccc;margin:0 5px}
+.owl-carousel .owl-dot.active{background:#333}

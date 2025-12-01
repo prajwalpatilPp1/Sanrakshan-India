@@ -1,0 +1,523 @@
+/*****************************
+ *    PATRONS.HTML SPECIFIC STYLES
+ *****************************/
+
+/*****************************
+ *       VARIABLES
+ *****************************/
+:root {
+  --bs-tertiary: #797E88;
+  --color-primary: #0a4275;
+  --color-primary-dark: #05264a;
+}
+
+/*****************************
+ *       GLOBAL RESETS
+ *****************************/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  color: #555;
+  background-color: #ffffff;
+}
+
+/*****************************
+ *       TYPOGRAPHY
+ *****************************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+/*****************************
+ *       GLOBAL STYLES
+ *****************************/
+.fw-bold {
+  font-weight: 700 !important;
+}
+
+.fw-medium {
+  font-weight: 600 !important;
+}
+
+.fw-normal {
+  font-weight: 400 !important;
+}
+
+.btn {
+  transition: .5s;
+}
+
+.btn-square {
+  width: 38px;
+  height: 38px;
+}
+
+.btn-sm-square {
+  width: 32px;
+  height: 32px;
+}
+
+.btn-lg-square {
+  width: 48px;
+  height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+}
+
+/*****************************
+ *       SPINNER
+ *****************************/
+#spinner {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s ease-out, visibility 0s linear .5s;
+  z-index: 99999;
+}
+
+#spinner.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .5s ease-out, visibility 0s linear 0s;
+}
+
+/*****************************
+ *       BACK TO TOP
+ *****************************/
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 30px;
+  bottom: 30px;
+  z-index: 99;
+}
+
+/*****************************
+ *       WOW ANIMATIONS
+ *****************************/
+.wow {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInDown {
+  animation-name: slideInDown;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/*****************************
+ *       NAVBAR STYLES
+ *****************************/
+/* Note: Navbar styles are in global.css */
+
+/*****************************
+ *       FOOTER STYLES
+ *****************************/
+.footer {
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 40px 0;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer h4 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.footer p,
+.footer span {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.footer .btn-square {
+  background: #0a4275;
+  color: #ffffff;
+  border: none;
+  margin-right: 10px;
+  transition: all 0.3s;
+}
+
+.footer .btn-square:hover {
+  background: white;
+  color: var(--color-primary);
+}
+
+.footer .copyright {
+  border-top: 1px solid #ffffff33;
+  padding-top: 20px;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.footer .copyright a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer .copyright a:hover {
+  color: white;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffc107;
+  transform: translateX(5px);
+}
+
+.footer-links .fa-angle-right {
+  transition: transform 0.3s ease;
+}
+
+.business-hours-list li {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.business-hours-list strong {
+  min-width: 80px;
+}
+
+/**********************************/
+/******** PATRONS PAGE ********/
+/**********************************/
+.team-card-pro {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-card-pro:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.team-card-pro-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Create a square container */
+    overflow: hidden;
+}
+
+.team-card-pro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top; /* Focus on the face */
+    transition: transform 0.4s ease;
+}
+
+.team-card-pro:hover .team-card-pro-image img {
+    transform: scale(1.05);
+}
+
+.team-card-pro-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Patron tagline: keep phrase on a single line */
+.patron-tagline {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    max-width: 100%;
+}
+
+/* Reduce font-size on small screens to try to preserve single-line layout */
+@media (max-width: 576px) {
+  .patron-tagline {
+    font-size: 1.25rem !important;
+    line-height: 1.1 !important;
+  }
+}
+
+.team-card-pro-name {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0a4275;
+    margin-bottom: 0.25rem;
+}
+
+.team-card-pro-title {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.team-card-pro-content .btn {
+    margin-top: auto; /* Pushes the button to the bottom */
+}
+   
+.patron-card:hover .patron-image {
+    transform: scale(1.1);
+}
+
+.patron-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+    color: #fff;
+    text-align: center;
+}
+
+.patron-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.read-more-btn {
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 50px;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.patron-card:hover .read-more-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/***
+**************************
+ *   PATRON CARD STYLES (from team.css)
+ *****************************/
+.patron-card {
+    width: 320px;
+    max-width: 320px;
+    min-height: 420px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 3px solid #0a4275;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(10, 66, 117, 0.15);
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: scale(0.9);
+    position: relative;
+    overflow: hidden;
+}
+
+.patron-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #0a4275, #05264a, #ffc107, #0a4275);
+    background-size: 400% 100%;
+    animation: patronGradient 3s ease infinite;
+}
+
+@keyframes patronGradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.patron-card.animate {
+    animation: patron-slide-in 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes patron-slide-in {
+    0% { 
+        opacity: 0;
+        transform: scale(0.8) rotateY(-15deg);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05) rotateY(5deg);
+    }
+    100% { 
+        opacity: 1;
+        transform: scale(1) rotateY(0deg);
+    }
+}
+
+.patron-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(10, 66, 117, 0.25);
+}
+
+.patron-card .img-container {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+    border: 4px solid #0a4275;
+    box-shadow: 0 0 0 4px rgba(10, 66, 117, 0.1);
+}
+
+.patron-card:hover .img-container {
+    transform: scale(1.1) rotate(5deg);
+    border-color: #05264a;
+}
+
+.patron-card .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+}
+
+.patron-card .name {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #0a4275;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.patron-card .job {
+    font-size: 16px;
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.patron-card .uiverse-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.patron-card .social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0a4275, #05264a);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 2px solid transparent;
+    font-size: 18px;
+    box-shadow: 0 4px 15px rgba(10, 66, 117, 0.3);
+}
+
+.patron-card .social-icon:hover {
+    background: linear-gradient(135deg, #05264a, #0a4275);
+    color: white;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(10, 66, 117, 0.4);
+}
