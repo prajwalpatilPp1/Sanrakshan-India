@@ -2,6 +2,6 @@
   "name": "sanrakshan-india",
   "compatibility_date": "2025-12-01",
   "assets": {
-    "directory": "./"
+    "directory": "."
   }
 }
