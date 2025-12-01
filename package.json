@@ -1,0 +1,22 @@
+{
+  "name": "sanrakshan-website-optimizer",
+  "version": "1.0.0",
+  "description": "Image optimization tools for Sanrakshan India website",
+  "main": "optimize-images.js",
+  "scripts": {
+    "optimize": "node optimize-images.js",
+    "find-large": "powershell -ExecutionPolicy Bypass -File find-large-files.ps1"
+  },
+  "keywords": [
+    "image-optimization",
+    "performance",
+    "website"
+  ],
+  "author": "Sanrakshan India",
+  "license": "MIT",
+  "dependencies": {
+    "sharp": "^0.33.0",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {}
+}
