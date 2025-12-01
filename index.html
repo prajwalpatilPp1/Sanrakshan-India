@@ -518,10 +518,40 @@
             });
 
             // Counter animation for Our Impact section
-            $('.counter').counterUp({
-                delay: 10,
-                time: 2000
-            });
+            const counters = document.querySelectorAll('.counter');
+            let hasAnimated = false;
+
+            const animateCounter = (counter) => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                updateCounter();
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        hasAnimated = true;
+                        counters.forEach(counter => animateCounter(counter));
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const impactSection = document.querySelector('.our-impact');
+            if (impactSection) {
+                observer.observe(impactSection);
+            }
         });
     </script>
 </body>
