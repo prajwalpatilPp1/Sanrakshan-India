@@ -234,47 +234,49 @@
             <!-- Form Section -->
             <div class="col-lg-5 donate-form py-5 text-center wow fadeIn" data-wow-delay="0.5s" style="background-color:#0a4275; border-radius: 0 15px 15px 0;">
                 <div class="h-100 p-5">
-                    <form>
+                    <form id="donationForm">
                         <div class="row g-3">
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" autocomplete="name" style="background-color:#ffffff10; color:#fff; border:none;">
-                                    <label for="name" style="color:#fff;">Your Name</label>
+                                    <input type="text" class="form-control" id="donorName" name="name" placeholder="Your Name" autocomplete="name" required style="background-color:#ffffff10; color:#fff; border:none;">
+                                    <label for="donorName" style="color:#fff;">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" autocomplete="email" style="background-color:#ffffff10; color:#fff; border:none;">
-                                    <label for="email" style="color:#fff;">Your Email</label>
+                                    <input type="email" class="form-control" id="donorEmail" name="email" placeholder="Your Email" autocomplete="email" required style="background-color:#ffffff10; color:#fff; border:none;">
+                                    <label for="donorEmail" style="color:#fff;">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-12">
-                                                 <!-- Custom Amount Input -->
-                            <div class="form-floating mt-3">
-                            <input type="number" class="form-control" id="customAmount" name="amount" placeholder="Enter amount (₹)"
-                                style="background-color:#ffffff10; color:#fff; border:none;">
-                                     <label for="customAmount" style="color:#fff;">Enter amount (₹)</label>
-                            </div>
-                                <div class="btn-group" role="group" aria-label="Donation Amount">
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                                    <label class="btn btn-outline-light" for="btnradio1"> ₹ 10</label>
-
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                                    <label class="btn btn-outline-light" for="btnradio2">₹20</label>
-
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                                    <label class="btn btn-outline-light" for="btnradio3">₹30</label>
-
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-                                    <label class="btn btn-outline-light" for="btnradio4">₹40</label>
-
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
-                                    <label class="btn btn-outline-light" for="btnradio5">₹50</label>
+                                <div class="form-floating">
+                                    <input type="tel" class="form-control" id="donorPhone" name="phone" placeholder="Your Phone" autocomplete="tel" required style="background-color:#ffffff10; color:#fff; border:none;">
+                                    <label for="donorPhone" style="color:#fff;">Your Phone</label>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-light py-3 w-100 fw-bold" type="submit" style="color:#0a4275; transition: 0.3s;" onmouseover="this.style.backgroundColor='#ffffffaa';" onmouseout="this.style.backgroundColor='white';">
-                                    Donate Now
+                                <!-- Custom Amount Input -->
+                                <div class="form-floating mt-3">
+                                    <input type="number" class="form-control" id="customAmount" name="amount" placeholder="Enter amount (₹)" min="10" style="background-color:#ffffff10; color:#fff; border:none;">
+                                    <label for="customAmount" style="color:#fff;">Enter amount (₹)</label>
+                                </div>
+                                <div class="btn-group mt-3" role="group" aria-label="Donation Amount">
+                                    <input type="radio" class="btn-check" name="donation_amount" id="btnradio1" value="500" autocomplete="off">
+                                    <label class="btn btn-outline-light" for="btnradio1">₹500</label>
+
+                                    <input type="radio" class="btn-check" name="donation_amount" id="btnradio2" value="1000" autocomplete="off">
+                                    <label class="btn btn-outline-light" for="btnradio2">₹1000</label>
+
+                                    <input type="radio" class="btn-check" name="donation_amount" id="btnradio3" value="2000" autocomplete="off">
+                                    <label class="btn btn-outline-light" for="btnradio3">₹2000</label>
+
+                                    <input type="radio" class="btn-check" name="donation_amount" id="btnradio4" value="5000" autocomplete="off">
+                                    <label class="btn btn-outline-light" for="btnradio4">₹5000</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-light py-3 w-100 fw-bold" type="button" id="donateBtn" style="color:#0a4275; transition: 0.3s;" onmouseover="this.style.backgroundColor='#ffffffaa';" onmouseout="this.style.backgroundColor='white';">
+                                    <i class="fas fa-heart me-2"></i>Donate Now
                                 </button>
                             </div>
                         </div>
@@ -300,13 +302,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <!-- Razorpay SDK -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
     <!-- Page-specific Scripts -->
     <script src="js/data.js"></script>
-    <script src="js/app.js"></script>    <script>
+    <script src="js/app.js"></script>
+    
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
             const customAmountInput = document.getElementById('customAmount');
-            const radioButtons = document.querySelectorAll('input[name="btnradio"]');
+            const radioButtons = document.querySelectorAll('input[name="donation_amount"]');
+            const donateBtn = document.getElementById('donateBtn');
 
+            // Handle amount selection
             if (customAmountInput) {
                 customAmountInput.addEventListener('focus', function () {
                     radioButtons.forEach(function (radio) {
@@ -314,6 +323,78 @@
                     });
                 });
             }
+
+            radioButtons.forEach(function(radio) {
+                radio.addEventListener('change', function() {
+                    if (radio.checked && customAmountInput) {
+                        customAmountInput.value = '';
+                    }
+                });
+            });
+
+            // Razorpay Payment Integration
+            donateBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Get form values
+                const name = document.getElementById('donorName').value;
+                const email = document.getElementById('donorEmail').value;
+                const phone = document.getElementById('donorPhone').value;
+                
+                // Get amount
+                let amount = customAmountInput.value;
+                if (!amount) {
+                    const selectedRadio = document.querySelector('input[name="donation_amount"]:checked');
+                    amount = selectedRadio ? selectedRadio.value : '';
+                }
+
+                // Validation
+                if (!name || !email || !phone) {
+                    alert('Please fill in all required fields');
+                    return;
+                }
+
+                if (!amount || amount < 10) {
+                    alert('Please enter a valid donation amount (minimum ₹10)');
+                    return;
+                }
+
+                // Convert to paise (Razorpay requires amount in smallest currency unit)
+                const amountInPaise = amount * 100;
+
+                // Razorpay options
+                const options = {
+                    key: 'YOUR_RAZORPAY_KEY_ID', // Replace with your Razorpay Key ID
+                    amount: amountInPaise,
+                    currency: 'INR',
+                    name: 'Sanrakshan India',
+                    description: 'Donation for Children Welfare',
+                    image: 'img/logo/sanrakshan-logo.png',
+                    prefill: {
+                        name: name,
+                        email: email,
+                        contact: phone
+                    },
+                    theme: {
+                        color: '#0a4275'
+                    },
+                    handler: function (response) {
+                        // Payment successful
+                        alert('Thank you for your donation! Payment ID: ' + response.razorpay_payment_id);
+                        // You can send this data to your server here
+                        console.log('Payment successful:', response);
+                        document.getElementById('donationForm').reset();
+                    },
+                    modal: {
+                        ondismiss: function() {
+                            console.log('Payment cancelled');
+                        }
+                    }
+                };
+
+                const rzp = new Razorpay(options);
+                rzp.open();
+            });
         });
     </script>
 </body>
