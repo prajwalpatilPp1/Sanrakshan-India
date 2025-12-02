@@ -245,15 +245,16 @@ p {
 }
 
 /*****************************
- *       NAVBAR STYLES
+ *       NAVBAR & TOPBAR - PROFESSIONAL RESPONSIVE
  *****************************/
-/* Topbar Optimization */
+
+/* Topbar - Fluid Responsive */
 .topbar-black {
   background-color: var(--color-primary) !important;
   transform: translateY(0);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
-  contain: layout style;
+  padding: clamp(0.4rem, 1vw, 0.75rem) 0;
 }
 
 .topbar-hidden {
@@ -261,27 +262,36 @@ p {
   pointer-events: none;
 }
 
-/* Main Navbar Optimization */
+.topbar-black span,
+.topbar-black a {
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+  margin-right: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.topbar-black .bi {
+  font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+}
+
+/* Main Navbar - Fluid Responsive */
 .navbar-main {
-  min-height: 65px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  transition: padding 0.3s ease, min-height 0.3s ease, box-shadow 0.3s ease;
+  min-height: clamp(50px, 10vw, 65px);
+  padding-top: clamp(0.5rem, 1.5vw, 1rem);
+  padding-bottom: clamp(0.5rem, 1.5vw, 1rem);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: padding, min-height;
-  contain: layout style;
 }
 
 .navbar-main.fixed-top {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  min-height: 60px;
+  z-index: 1100;
+  padding-top: clamp(0.4rem, 1vw, 0.5rem);
+  padding-bottom: clamp(0.4rem, 1vw, 0.5rem);
+  min-height: clamp(48px, 9vw, 60px);
   background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* Ensure navbar and its dropdowns always appear above other page content
@@ -302,7 +312,7 @@ p {
   z-index: 2000 !important; /* higher than most content but below modals */
 }
 
-/* Logo Optimization */
+/* Logo - Fluid Responsive */
 .navbar-brand-logo {
   position: relative;
   z-index: 1;
@@ -313,29 +323,31 @@ p {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  width: clamp(70px, 15vw, 100px);
+  height: clamp(60px, 12vw, 100px);
 }
 
 .logo-img {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 100%;
+  max-height: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 
 .navbar-main.fixed-top .logo-img {
-  transform: scale(0.7);
+  transform: scale(clamp(0.7, 0.8, 0.85));
   transform-origin: left center;
 }
 
-/* Nav Links Optimization */
+/* Nav Links - Fluid Responsive */
 .navbar-main .navbar-nav .nav-link {
-  font-size: 20px;
+  font-size: clamp(14px, 2.5vw, 20px);
   color: var(--color-primary) !important;
   font-weight: 600;
-  padding: 0px 1rem;
+  padding: clamp(0.3rem, 0.5vw, 0.5rem) clamp(0.5rem, 1.5vw, 1rem);
   transition: color 0.2s ease;
 }
 
@@ -345,14 +357,14 @@ p {
 }
 
 /*****************************
- *   ANIMATED HAMBURGER TO X
+ *   ANIMATED HAMBURGER - RESPONSIVE
  *****************************/
 .navbar-toggler {
   border: none;
-  padding: 0.5rem;
+  padding: clamp(0.3rem, 1vw, 0.5rem);
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: clamp(35px, 7vw, 40px);
+  height: clamp(35px, 7vw, 40px);
   background: transparent;
 }
 
@@ -364,21 +376,21 @@ p {
 .hamburger-icon {
   display: block;
   position: relative;
-  width: 30px;
-  height: 24px;
+  width: clamp(24px, 5vw, 30px);
+  height: clamp(20px, 4vw, 24px);
 }
 
 .hamburger-icon .line {
   display: block;
   position: absolute;
-  height: 3px;
+  height: clamp(2px, 0.5vw, 3px);
   width: 100%;
   background: var(--color-primary);
   border-radius: 3px;
   opacity: 1;
   left: 0;
   transform: rotate(0deg);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hamburger-icon .line:nth-child(1) {
@@ -386,16 +398,16 @@ p {
 }
 
 .hamburger-icon .line:nth-child(2) {
-  top: 10px;
+  top: clamp(8px, 1.5vw, 10px);
 }
 
 .hamburger-icon .line:nth-child(3) {
-  top: 20px;
+  top: clamp(16px, 3vw, 20px);
 }
 
 /* Transform to X when menu is open */
 .navbar-toggler[aria-expanded="true"] .hamburger-icon .line:nth-child(1) {
-  top: 10px;
+  top: clamp(8px, 1.5vw, 10px);
   transform: rotate(135deg);
 }
 
@@ -405,75 +417,63 @@ p {
 }
 
 .navbar-toggler[aria-expanded="true"] .hamburger-icon .line:nth-child(3) {
-  top: 10px;
+  top: clamp(8px, 1.5vw, 10px);
   transform: rotate(-135deg);
 }
 
-/* Mobile Optimization */
+/* Mobile Optimization - Tablet & Below */
 @media (max-width: 991.98px) {
   .navbar-main {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
     min-height: 56px;
   }
+  
   .navbar-brand-logo {
     position: static;
-    left: auto;
-    top: auto;
-    margin-bottom: 0.25rem;
   }
+  
   .logo-container {
-    width: 96px;
-    height: 80px;
-    margin: 0;
+    width: clamp(75px, 12vw, 90px);
+    height: clamp(65px, 10vw, 80px);
   }
-  .logo-img {
-    max-width: 90px;
-    max-height: 80px;
-  }
+  
   .navbar-main.fixed-top .logo-img {
     transform: scale(1);
   }
   
-  /* Menu text size */
-  .navbar-main h4 {
-    font-size: 0.95rem;
-  }
-  
-  /* Mobile Dropdown Styles */
+  /* Mobile Menu Styles */
   .navbar-collapse {
     background-color: #fff;
-    border-radius: 8px;
-    margin-top: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: clamp(0.4rem, 1vw, 0.6rem);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     max-height: 70vh;
     overflow-y: auto;
   }
   
   .navbar-nav {
-    padding: 0.5rem 0;
+    padding: clamp(0.4rem, 1vw, 0.6rem) 0;
   }
   
   .navbar-main .nav-link {
-    font-size: 14px;
-    padding: 0.65rem 1rem;
-    border-bottom: 1px solid rgba(10, 66, 117, 0.1);
+    font-size: clamp(13px, 2.5vw, 15px);
+    padding: clamp(0.5rem, 1.2vw, 0.7rem) clamp(0.8rem, 2vw, 1rem);
+    border-bottom: 1px solid rgba(10, 66, 117, 0.08);
   }
   
   .navbar-main .nav-item:last-child .nav-link {
     border-bottom: none;
   }
   
-  /* Dropdown Menu Mobile Styling */
+  /* Dropdown Menu Mobile */
   .navbar-main .dropdown-menu {
     position: static !important;
     transform: none !important;
     display: none;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 0.25rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    margin: 0.5rem 1rem;
-    padding: 0.5rem 0;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: clamp(0.4rem, 1vw, 0.6rem) clamp(0.8rem, 2vw, 1rem);
+    padding: clamp(0.4rem, 1vw, 0.6rem) 0;
     background-color: #fff;
   }
   
@@ -482,22 +482,22 @@ p {
   }
   
   .navbar-main .dropdown-item {
-    padding: 0.5rem 1rem;
+    padding: clamp(0.4rem, 1vw, 0.6rem) clamp(0.8rem, 2vw, 1rem);
     transition: all 0.2s ease;
     color: var(--color-primary);
-    font-size: 13px;
+    font-size: clamp(12px, 2.2vw, 14px);
   }
   
   .navbar-main .dropdown-item:hover,
   .navbar-main .dropdown-item:focus {
-    background-color: rgba(10, 66, 117, 0.1);
+    background-color: rgba(10, 66, 117, 0.08);
     color: var(--color-primary-dark);
   }
   
   /* Dropdown Toggle Arrow */
   .navbar-main .dropdown-toggle::after {
     float: right;
-    margin-top: 0.5rem;
+    margin-top: clamp(0.3rem, 0.8vw, 0.5rem);
     transition: transform 0.3s ease;
   }
   
@@ -507,10 +507,10 @@ p {
   
   .navbar-main .btn-primary {
     display: block !important;
-    margin: 1rem 1rem 0.5rem;
+    margin: clamp(0.8rem, 2vw, 1rem);
     text-align: center;
-    padding: 0.7rem 1.5rem;
-    font-size: 14px;
+    padding: clamp(0.6rem, 1.5vw, 0.8rem) clamp(1.2rem, 3vw, 1.5rem);
+    font-size: clamp(13px, 2.5vw, 15px);
     font-weight: 600;
   }
 }
@@ -611,12 +611,11 @@ p {
 
 
 /*****************************
- *   TOPBAR & NAVBAR MOBILE RESPONSIVE
+ *   TOPBAR & NAVBAR - ADDITIONAL BREAKPOINTS
  *****************************/
 
-/* Tablet and below (992px) */
+/* Tablet (992px and below) */
 @media (max-width: 992px) {
-  /* Topbar */
   .topbar-black .row {
     justify-content: center;
   }
@@ -624,79 +623,66 @@ p {
   .topbar-black .col-12 {
     justify-content: center !important;
   }
-  
-  .topbar-black span,
-  .topbar-black a {
-    font-size: 0.85rem;
-  }
-  
-  /* Navbar */
-  .navbar-main .navbar-nav {
-    padding: 1rem 0;
-  }
-  
-  .navbar-main .nav-link {
-    font-size: 16px;
-    padding: 0.5rem 1rem;
-  }
-  
-  .navbar-main .dropdown-menu {
-    border: none;
-    box-shadow: none;
-    padding-left: 1rem;
-  }
-  
-  .navbar-main .dropdown-item {
-    font-size: 14px;
-    padding: 0.5rem 1rem;
-  }
-  
-  .navbar-main .btn-primary {
-    display: block !important;
-    margin: 1rem 1rem 0.5rem;
-    text-align: center;
-  }
 }
 
-/* Mobile landscape and below (768px) */
+/* Mobile Landscape (768px and below) */
 @media (max-width: 768px) {
-  /* Topbar */
   .topbar-black {
-    padding: 0.5rem 0;
+    padding: clamp(0.3rem, 0.8vw, 0.5rem) 0;
   }
   
   .topbar-black .row {
-    padding: 0.25rem 0;
+    padding: clamp(0.2rem, 0.5vw, 0.3rem) 0;
   }
   
-  .topbar-black span {
-    font-size: 0.75rem;
-    margin-right: 0.5rem !important;
-  }
-  
-  .topbar-black a {
-    font-size: 0.85rem;
-    margin-right: 0.5rem !important;
-  }
-  
-  .topbar-black a:last-child {
-    margin-right: 0 !important;
-  }
-  
-  .topbar-black .bi {
-    font-size: 0.7rem;
-  }
-  
-  /* Navbar */
   .navbar-main {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
     min-height: 50px;
   }
   
   .logo-container {
-    width: 80px;
-    height: 65px;
+    width: clamp(70px, 11vw, 80px);
+    height: clamp(60px, 9vw, 70px);
+  }
+}
+
+/* Small Mobile (576px and below) */
+@media (max-width: 576px) {
+  .topbar-black span,
+  .topbar-black a {
+    margin-right: clamp(0.3rem, 1vw, 0.5rem) !important;
+  }
+  
+  .navbar-main {
+    min-height: 48px;
+  }
+  
+  .logo-container {
+    width: clamp(65px, 10vw, 75px);
+    height: clamp(55px, 8vw, 65px);
+  }
+  
+  .navbar-collapse {
+    max-height: 65vh;
+  }
+}
+
+/* Extra Small Mobile (400px and below) */
+@media (max-width: 400px) {
+  .topbar-black {
+    padding: 0.3rem 0;
+  }
+  
+  .navbar-main {
+    min-height: 45px;
+  }
+  
+  .logo-container {
+    width: 60px;
+    height: 50px;
+  }
+  
+  .navbar-collapse {
+    max-height: 60vh;
   }
   
   .logo-img {

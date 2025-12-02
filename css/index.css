@@ -18,12 +18,6 @@
   box-sizing: border-box;
 }
 
-html {
-  overflow-x: hidden;
-  width: 100%;
-  max-width: 100vw;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -31,33 +25,8 @@ body {
   font-weight: 400;
   line-height: 1.6;
   overflow-x: hidden;
-  width: 100%;
-  max-width: 100vw;
   color: #555;
   background-color: #ffffff;
-  position: relative;
-}
-
-section {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-.container,
-.container-fluid {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.row {
-  max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }
 
 /*****************************
@@ -236,24 +205,7 @@ h6,
   contain: layout style;
 }
 
-/* Force horizontal layout in all views */
-.footer .row.g-5 {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-}
 
-.footer .row.g-5 > div {
-  flex: 1 !important;
-  min-width: 0 !important;
-}
-
-/* Hide gallery on all non-desktop views */
-@media (max-width: 991px) {
-  .footer .row.g-5 > div:nth-child(3) {
-    display: none !important;
-  }
-}
 
 .footer a {
   color: #ffffff;
@@ -337,12 +289,12 @@ h6,
 #sanrakshanCarousel {
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .carousel-split-row {
   display: flex;
-  height: 40vh;
-  min-height: 400px;
+  height: clamp(450px, 60vh, 700px);
   width: 100%;
   contain: layout style;
 }
@@ -387,14 +339,14 @@ h6,
 .carousel-content-wrapper {
   position: relative;
   z-index: 2;
-  padding: 2rem 3rem 1.5rem 5rem;
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(2rem, 5vw, 5rem);
   width: 100%;
   text-align: left;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .carousel-tagline {
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   line-height: 1.4;
   margin: 0;
   font-weight: 700;
@@ -450,14 +402,84 @@ h6,
 }
 
 .carousel-item h1 {
-  font-size: 1.8rem;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
   line-height: 1.3;
 }
 
 .carousel-item p {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+}
+
+/* Responsive adjustments for carousel */
+@media (max-width: 991.98px) {
+  .carousel-split-row {
+    height: clamp(400px, 55vh, 600px);
+  }
+  
+  .carousel-description-col {
+    flex: 0 0 40%;
+  }
+  
+  .carousel-image-col {
+    flex: 0 0 70%;
+    margin-left: -4%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .carousel-split-row {
+    flex-direction: column;
+    height: auto;
+    min-height: 500px;
+  }
+  
+  .carousel-description-col {
+    flex: 0 0 100%;
+    clip-path: none;
+    min-height: 250px;
+    padding: 2rem 1.5rem;
+  }
+  
+  .carousel-content-wrapper {
+    padding: 1.5rem;
+  }
+  
+  .carousel-image-col {
+    flex: 0 0 100%;
+    margin-left: 0;
+    min-height: 250px;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .carousel-control-prev {
+    left: 0.5rem;
+  }
+  
+  .carousel-control-next {
+    right: 0.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .carousel-split-row {
+    min-height: 450px;
+  }
+  
+  .carousel-description-col {
+    min-height: 200px;
+    padding: 1.5rem 1rem;
+  }
+  
+  .carousel-image-col {
+    min-height: 250px;
+  }
 }
 
 
@@ -556,12 +578,12 @@ h6,
 }
 
 /*****************************
- *       FOCUS AREAS - PREMIUM PROFESSIONAL DESIGN
+ *       FOCUS AREAS - PROFESSIONAL RESPONSIVE
  *****************************/
 .focus-areas-section {
   background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
   overflow: hidden;
-  padding: 5rem 0 0 0;
+  padding: clamp(3rem, 8vw, 5rem) 0 0 0;
   position: relative;
 }
 
@@ -576,12 +598,12 @@ h6,
 }
 
 .focus-areas-section .section-heading {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 700;
   color: var(--color-primary);
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  letter-spacing: 1px;
+  margin-bottom: clamp(0.4rem, 1vw, 0.5rem);
+  letter-spacing: clamp(0.5px, 0.15vw, 1px);
   position: relative;
   display: block;
   text-align: center;
@@ -590,21 +612,22 @@ h6,
 .focus-areas-section .section-heading::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: clamp(-8px, -1.5vw, -10px);
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
+  width: clamp(40px, 8vw, 60px);
+  height: clamp(2px, 0.5vw, 3px);
   background: var(--color-primary);
 }
 
 .section-subtitle {
-  font-size: 1.125rem;
+  font-size: clamp(0.95rem, 2vw, 1.125rem);
   color: #666;
-  max-width: 700px;
-  margin: 1.5rem auto 3.5rem;
+  max-width: min(90%, 700px);
+  margin: clamp(1rem, 2.5vw, 1.5rem) auto clamp(2rem, 5vw, 3.5rem);
   line-height: 1.7;
   font-weight: 400;
+  padding: 0 1rem;
 }
 
 .focus-cards-marquee {
@@ -633,7 +656,7 @@ h6,
 
 .focus-card {
   flex: 0 0 auto;
-  width: 380px;
+  width: clamp(280px, 50vw, 380px);
   background: #fff;
   border-radius: 0;
   box-shadow: 0 2px 15px rgba(10, 66, 117, 0.08);
@@ -653,7 +676,7 @@ h6,
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: clamp(2px, 0.5vw, 3px);
   background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
   transform: scaleX(0);
   transform-origin: left;
@@ -678,7 +701,7 @@ h6,
 
 .focus-card img {
   width: 100%;
-  height: 180px;
+  height: clamp(140px, 25vw, 180px);
   object-fit: cover;
   transition: all 0.5s ease;
   filter: brightness(0.95);
@@ -690,24 +713,24 @@ h6,
 }
 
 .focus-content {
-  padding: 1.5rem 1.5rem;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
   background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
   text-align: left;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  min-height: 130px;
+  min-height: clamp(110px, 20vw, 130px);
 }
 
 .focus-content h5 {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   font-weight: 700;
-  margin-bottom: 0.875rem;
+  margin-bottom: clamp(0.6rem, 1.5vw, 0.875rem);
   color: var(--color-primary);
   text-transform: uppercase;
   line-height: 1.4;
-  letter-spacing: 0.3px;
+  letter-spacing: clamp(0.2px, 0.05vw, 0.3px);
   transition: color 0.3s ease;
   max-height: 2.8rem;
   overflow: hidden;
@@ -719,7 +742,7 @@ h6,
 
 .focus-content p {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.6vw, 0.95rem);
   color: #666;
   margin: 0;
   line-height: 1.7;
@@ -736,11 +759,11 @@ h6,
 }
 
 /*****************************
- *       OUR IMPACT SECTION - ENHANCED
+ *       OUR IMPACT SECTION - PROFESSIONAL RESPONSIVE
  *****************************/
 .our-impact {
   background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-  padding: 5rem 0 0;
+  padding: clamp(3rem, 8vw, 5rem) 0 0;
   position: relative;
   overflow-x: hidden;
 }
@@ -757,9 +780,9 @@ h6,
 
 .our-impact .impact-heading {
   color: var(--color-primary);
-  padding-bottom: 2rem;
-  font-size: 2rem;
-  letter-spacing: 1px;
+  padding-bottom: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  letter-spacing: clamp(0.5px, 0.15vw, 1px);
   position: relative;
   display: block;
   text-align: center;
@@ -768,11 +791,11 @@ h6,
 .our-impact .impact-heading::after {
   content: '';
   position: absolute;
-  bottom: 10px;
+  bottom: clamp(8px, 1.5vw, 10px);
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
+  width: clamp(40px, 8vw, 60px);
+  height: clamp(2px, 0.5vw, 3px);
   background: var(--color-primary);
 }
 
@@ -789,9 +812,9 @@ h6,
 
 .impact-card {
   position: relative;
-  width: 380px;
-  min-width: 380px;
-  min-height: 320px;
+  width: clamp(280px, 50vw, 380px);
+  min-width: clamp(280px, 50vw, 380px);
+  min-height: clamp(260px, 45vw, 320px);
   border-radius: 0;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -805,7 +828,7 @@ h6,
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: clamp(2px, 0.5vw, 3px);
   background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
   transform: scaleX(0);
   transform-origin: left;
@@ -876,12 +899,12 @@ h6,
 
 .impact-number {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
   font-weight: 700;
   color: #0a4275 !important;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 0.75rem;
-  letter-spacing: 2px;
+  margin-bottom: clamp(0.5rem, 1.2vw, 0.75rem);
+  letter-spacing: clamp(1px, 0.3vw, 2px);
   transition: transform 0.3s ease;
 }
 
@@ -892,7 +915,7 @@ h6,
 
 .impact-text {
   font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
   font-weight: 600;
   color: #333 !important;
   text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.5);
@@ -902,11 +925,11 @@ h6,
 }
 
 /*****************************
- *    OUTCOME SNAPSHOT SECTION - OPTIMIZED
+ *    OUTCOME SNAPSHOT - PROFESSIONAL RESPONSIVE
  *****************************/
 .outcome-snapshot {
   background: linear-gradient(to bottom, #0a4275 0%, #0a4275 60%, transparent 100%);
-  padding: 5rem 0;
+  padding: clamp(3rem, 8vw, 5rem) 0;
 }
 
 .outcome-snapshot .impact-heading,
@@ -920,13 +943,13 @@ h6,
 }
 
 .outcome-box {
-  height: 400px;
+  height: clamp(300px, 55vw, 400px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
   color: white;
-  padding: 2.5rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -959,7 +982,7 @@ h6,
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: clamp(2px, 0.5vw, 3px);
   background: linear-gradient(90deg, transparent, white, transparent);
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -980,15 +1003,16 @@ h6,
 .outcome-box h1 {
   color: #fff;
   font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
   font-family: 'Josefin Sans', sans-serif;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: clamp(0.5px, 0.15vw, 1px);
 }
 
 .outcome-box p {
   margin: 0;
-  font-size: 1.125rem;
+  font-size: clamp(0.95rem, 2vw, 1.125rem);
   font-family: 'Poppins', sans-serif;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
   line-height: 1.6;
@@ -1005,14 +1029,14 @@ h6,
 }
 
 /*****************************
- *       SDGs SECTION - PROFESSIONAL SPOTLIGHT EFFECT
+ *       SDGs SECTION - PROFESSIONAL RESPONSIVE
  *****************************/
 .achieved-sdgs {
   background: 
     radial-gradient(circle at 20% 50%, rgba(229, 36, 59, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 80% 50%, rgba(38, 189, 226, 0.05) 0%, transparent 50%),
     linear-gradient(180deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
-  padding: 5rem 0;
+  padding: clamp(3rem, 8vw, 5rem) 0;
   position: relative;
   overflow: hidden;
 }
@@ -1054,13 +1078,13 @@ h6,
 }
 
 .achieved-sdgs .section-heading {
-  padding-top: 3rem;
-  padding-bottom: 4rem;
+  padding-top: clamp(1.5rem, 4vw, 3rem);
+  padding-bottom: clamp(2rem, 6vw, 4rem);
 }
 
 .achieved-sdgs .row {
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: clamp(30px, 8vw, 60px);
 }
 
 .achieved-sdgs .card {
@@ -1098,7 +1122,7 @@ h6,
   bottom: 0;
   left: 0;
   right: 0;
-  height: 5px;
+  height: clamp(3px, 0.8vw, 5px);
   background: linear-gradient(90deg, 
     #E5243B 0%, 
     #DDA63A 20%, 
@@ -1120,11 +1144,11 @@ h6,
 }
 
 .achieved-sdgs .row > div:nth-child(1) {
-  margin-right: -45px;
+  margin-right: clamp(-20px, -6vw, -45px);
 }
 
 .achieved-sdgs .row > div:nth-child(5) {
-  margin-left: -45px;
+  margin-left: clamp(-20px, -6vw, -45px);
 }
 
 .achieved-sdgs .row > div:nth-child(1) .card,
@@ -1237,7 +1261,7 @@ h6,
 }
 
 /*****************************
- *       AWARDS SECTION
+ *       AWARDS SECTION - PROFESSIONAL RESPONSIVE
  *****************************/
 .awards-recognition {
   position: relative;
@@ -1245,7 +1269,7 @@ h6,
   background-size: cover;
   background-position: center 55%;
   background-attachment: fixed;
-  padding: 5rem 0;
+  padding: clamp(3rem, 8vw, 5rem) 0;
 }
 
 .awards-recognition::before {
@@ -1264,25 +1288,21 @@ h6,
   z-index: 1;
 }
 
-.awards-recognition .container {
-  position: relative;
-}
-
 .award-certificate {
   padding: 0;
   height: 100%;
   display: flex;
   align-items: stretch;
   justify-content: stretch;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
+  border: clamp(1px, 0.3vw, 2px) solid #e0e0e0;
+  border-radius: clamp(6px, 1.2vw, 8px);
   overflow: hidden;
-  margin: 15px;
+  margin: clamp(10px, 2vw, 15px);
 }
 
 .award-certificate img {
   width: 100%;
-  height: 350px;
+  height: clamp(250px, 45vw, 350px);
   object-fit: fill;
   background-color: white;
 }
@@ -1290,28 +1310,8 @@ h6,
 /*****************************
  *       DONATE SECTION
  *****************************/
-.donate-text {
-  position: relative;
-  overflow: hidden;
-  padding: 2rem 2.5rem !important;
-}
-
-.donate-text .d-flex {
-  padding: 0 !important;
-}
-
 .donate-text h1 {
   color: var(--color-primary);
-  font-weight: 700;
-  line-height: 1.2;
-  font-size: 1.1rem;
-  margin-bottom: 0.75rem !important;
-}
-
-.donate-text p {
-  line-height: 1.4;
-  font-size: 0.8rem;
-  margin-bottom: 0 !important;
 }
 
 .donate-form {
@@ -1379,16 +1379,16 @@ h6,
 }
 
 /*****************************
- *       OUR DONORS SECTION - OPTIMIZED
+ *       OUR DONORS SECTION - PROFESSIONAL RESPONSIVE
  *****************************/
 .donors-section {
   background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
-  padding: 5rem 0;
+  padding: clamp(3rem, 8vw, 5rem) 0;
   contain: layout style;
 }
 
 .donors-section h2 {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   line-height: 1.4;
 }
 
@@ -1412,17 +1412,19 @@ h6,
 }
 
 /*****************************
- *       TESTIMONIALS SECTION
+ *       TESTIMONIALS SECTION - PROFESSIONAL RESPONSIVE
  *****************************/
 .testimonial-section {
   background: #f8f9fa;
   position: relative;
+  padding: clamp(3rem, 8vw, 5rem) 0;
   contain: layout style paint;
 }
 
 .testimonial-section h1 {
   color: #0a4275;
   font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .card-item-styled {
@@ -1455,8 +1457,9 @@ h6,
 .team-comment {
   background: #0a4275;
   color: white;
-  padding: 1.5rem;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
   font-style: italic;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
   line-height: 1.6;
   position: relative;
   contain: layout style paint;
@@ -1468,24 +1471,24 @@ h6,
 
 .team-comment-arrow {
   position: absolute;
-  bottom: -10px;
+  bottom: clamp(-8px, -1.5vw, -10px);
   left: 50%;
   transform: translateX(-50%) translateZ(0);
   width: 0;
   height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #0a4275;
+  border-left: clamp(8px, 1.5vw, 10px) solid transparent;
+  border-right: clamp(8px, 1.5vw, 10px) solid transparent;
+  border-top: clamp(8px, 1.5vw, 10px) solid #0a4275;
   will-change: transform;
 }
 
 .team-photo {
-  width: 150px;
-  height: 150px;
+  width: clamp(90px, 18vw, 125px);
+  height: clamp(90px, 18vw, 125px);
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #0a4275;
-  margin-bottom: 1rem;
+  border: clamp(2px, 0.5vw, 3px) solid #0a4275;
+  margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
   backface-visibility: hidden;
   transform: translateZ(0);
   will-change: transform;
@@ -1494,11 +1497,12 @@ h6,
 .card-item-styled h5 {
   color: #0a4275;
   font-weight: 600;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   margin: 0;
 }
 
 /*****************************
- *       MAP SECTION
+ *       MAP SECTION - PROFESSIONAL RESPONSIVE
  *****************************/
 .map-section {
   position: relative;
@@ -1507,10 +1511,10 @@ h6,
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  min-height: 100vh;
+  min-height: clamp(600px, 100vh, 100vh);
   display: flex;
   align-items: center;
-  padding: 3rem 0;
+  padding: clamp(2rem, 5vw, 3rem) 0;
 }
 
 .map-section .container {
@@ -1521,10 +1525,11 @@ h6,
 .map-section h1 {
   color: #0a4275;
   font-weight: 700;
-  margin-bottom: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
   background-color: rgba(255, 255, 255, 0.85);
-  padding: 1.5rem 3rem;
-  border-radius: 10px;
+  padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1.5rem, 4vw, 3rem);
+  border-radius: clamp(8px, 1.5vw, 10px);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   display: inline-block;
@@ -1536,52 +1541,55 @@ h6,
   background: #fff;
   align-items: center;
   justify-content: center;
-  border-radius: 15px;
+  border-radius: clamp(10px, 2vw, 15px);
   box-shadow: 0 10px 40px rgba(0,0,0,0.1);
   overflow: hidden;
-  max-height: 400px;
+  max-height: clamp(300px, 55vw, 400px);
 }
 
 .contact-details-pro {
   flex: 0 0 45%;
-  padding: 2rem 2.5rem;
+  padding: clamp(1.5rem, 3vw, 2rem) clamp(1.5rem, 3.5vw, 2.5rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #f0f8ff;
-  height: 400px;
+  height: clamp(300px, 55vw, 400px);
 }
 
 .contact-details-pro h3 {
   color: var(--color-primary);
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
   font-weight: 700;
 }
 
 .contact-details-pro .d-flex {
-  margin-bottom: 1.25rem !important;
+  margin-bottom: clamp(1rem, 2vw, 1.25rem) !important;
   align-items: flex-start !important;
 }
 
 .contact-details-pro i {
-  font-size: 1.25rem !important;
-  margin-top: 0.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem) !important;
+  margin-top: clamp(0.2rem, 0.4vw, 0.25rem);
   flex-shrink: 0;
 }
 
 .contact-details-pro span {
   line-height: 1.6;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
   display: block;
 }
 
 .contact-details-pro .btn {
-  margin-top: 0.5rem;
+  margin-top: clamp(0.4rem, 0.8vw, 0.5rem);
+  font-size: clamp(0.85rem, 1.6vw, 1rem);
+  padding: clamp(0.5rem, 1.2vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
 }
 
 .map-contact-container .map-responsive {
   flex: 0 0 55%;
-  height: 400px;
+  height: clamp(300px, 55vw, 400px);
   overflow: hidden;
 }
 
@@ -2283,48 +2291,78 @@ h6,
   }
   
   /* Donate Section - Stack vertically on mobile */
+  .donate {
+    overflow-x: hidden;
+  }
+  
+  .donate .container {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
   .donate .row {
     flex-direction: column;
+    margin: 0;
   }
   
   .donate-text {
-    padding: 1.5rem 1.25rem !important;
+    padding: clamp(0.2rem, 0.5vw, 0.3rem) !important;
     border-radius: 15px 15px 0 0;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
   }
   
   .donate-text h1 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem !important;
+    font-size: clamp(0.25rem, 0.6vw, 0.35rem);
+    margin-bottom: clamp(0.05rem, 0.15vw, 0.1rem) !important;
+    line-height: 1.1;
+    max-width: 95%;
   }
   
   .donate-text p {
-    font-size: 0.8rem;
+    font-size: clamp(0.2rem, 0.5vw, 0.28rem);
+    line-height: 1.1;
+    margin-bottom: 0 !important;
+    max-width: 95%;
   }
   
   .donate-form {
     border-radius: 0 0 15px 15px;
-    padding: 2rem 1.5rem;
+    padding: clamp(0.6rem, 2vw, 1rem) clamp(0.6rem, 2vw, 1rem);
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .donate-form .form-control {
-    padding: 0.9rem;
-    font-size: 0.95rem;
+    padding: clamp(0.4rem, 1.2vw, 0.5rem);
+    font-size: clamp(0.65rem, 1.8vw, 0.75rem);
+    margin-bottom: clamp(0.4rem, 1vw, 0.6rem);
   }
   
   .donate-form .btn-donate-now {
-    padding: 0.9rem;
-    font-size: 1rem;
+    padding: clamp(0.4rem, 1.2vw, 0.5rem);
+    font-size: clamp(0.7rem, 1.8vw, 0.8rem);
   }
   
   /* Make donation amount buttons stack in 2x2 grid on mobile */
   .donate-form .btn-group {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+    gap: clamp(0.3rem, 0.8vw, 0.4rem);
   }
   
   .donate-form .btn-group label {
     margin: 0;
+    font-size: clamp(0.6rem, 1.6vw, 0.7rem);
+    padding: clamp(0.3rem, 1vw, 0.4rem) clamp(0.4rem, 1.2vw, 0.5rem);
   }
   
   /* Testimonials */
@@ -2346,8 +2384,8 @@ h6,
   }
   
   .team-photo {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
   
   .card-item-styled h5 {
@@ -2649,32 +2687,35 @@ h6,
   }
   
   .donate-text {
-    padding: 1.25rem 1rem !important;
+    padding: 1rem 1rem !important;
     border-radius: 15px 15px 0 0;
   }
   
   .donate-text h1 {
-    font-size: 0.95rem;
-    margin-bottom: 0.5rem !important;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem !important;
+    line-height: 1.3;
   }
   
   .donate-text p {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+    line-height: 1.4;
+    margin-bottom: 0 !important;
   }
   
   .donate-form {
     border-radius: 0 0 15px 15px;
-    padding: 1.75rem 1.5rem;
+    padding: 1.25rem 1rem;
   }
   
   .donate-form .form-control {
-    padding: 0.85rem;
-    font-size: 0.9rem;
+    padding: 0.65rem;
+    font-size: 0.85rem;
   }
   
   .donate-form .btn-donate-now {
-    padding: 0.85rem;
-    font-size: 0.95rem;
+    padding: 0.65rem;
+    font-size: 0.85rem;
   }
   
   /* 2x2 grid for donation buttons */
@@ -2700,11 +2741,6 @@ h6,
   
   .card-item-styled {
     padding-bottom: 20px;
-    margin-bottom: 1rem;
-  }
-  
-  .team-comment-wrapper {
-    margin-bottom: 1.5rem;
   }
   
   .team-comment {
@@ -2714,9 +2750,9 @@ h6,
   }
   
   .team-photo {
-    width: 100px;
-    height: 100px;
-    border-width: 3px;
+    width: 80px;
+    height: 80px;
+    border-width: 2px;
   }
   
   .card-item-styled h5 {
@@ -2725,59 +2761,61 @@ h6,
   
 
   
-  /* Footer - Uniform Mobile Layout */
+  /* Footer - Mobile Layout */
   .footer {
-    padding: 25px 0;
+    padding: 2rem 0 1rem;
   }
   
   .footer .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
   
-  .footer h4 {
-    font-size: 1rem;
-    margin-bottom: 12px;
-  }
-  
-  /* Hide entire gallery column on mobile */
+  /* Hide gallery column on mobile */
   .footer .row.g-5 > div:nth-child(3) {
     display: none !important;
   }
   
-  /* Make footer horizontal on mobile - left and right */
+  /* Two column layout - left and right */
   .footer .row.g-5 {
     display: flex !important;
     flex-direction: row !important;
     gap: 1.5rem !important;
+    margin: 0 !important;
   }
   
   .footer .row.g-5 > div {
     flex: 1 !important;
-    min-width: 0 !important;
+    padding: 0 !important;
   }
   
-  /* Move Quick Links (2nd column) slightly to the right */
-  .footer .row.g-5 > div:nth-child(2) {
-    padding-left: 1rem;
+  /* Move office section (first column) slightly right */
+  .footer .row.g-5 > div:first-child {
+    padding-left: 0.5rem !important;
+  }
+  
+  .footer h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
   }
   
   .footer p,
   .footer span,
   .footer a {
     font-size: 0.85rem;
+    line-height: 1.6;
   }
   
   .footer-links li {
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
   }
   
   .footer .d-flex {
-    margin-bottom: 10px;
+    margin-bottom: 0.75rem;
   }
   
   .footer-button-box {
-    gap: 8px;
+    gap: 0.5rem;
   }
   
   .footer-button-box .social-button {
@@ -2790,13 +2828,10 @@ h6,
     height: 16px;
   }
   
-  .footer-button-box-wrapper {
-    min-width: auto;
-  }
-  
   .footer .copyright {
     font-size: 0.75rem;
-    padding-top: 15px;
+    padding-top: 1rem;
+    margin-top: 1rem;
   }
 }
 
@@ -3181,32 +3216,35 @@ h6,
   }
   
   .donate-text {
-    padding: 1rem 0.75rem !important;
+    padding: 0.75rem 0.75rem !important;
     border-radius: 12px 12px 0 0;
   }
   
   .donate-text h1 {
-    font-size: 0.9rem;
-    margin-bottom: 0.4rem !important;
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem !important;
+    line-height: 1.2;
   }
   
   .donate-text p {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
+    line-height: 1.3;
+    margin-bottom: 0 !important;
   }
   
   .donate-form {
     border-radius: 0 0 12px 12px;
-    padding: 1.5rem 1.25rem;
+    padding: 1.25rem 1rem;
   }
   
   .donate-form .form-control {
-    padding: 0.75rem;
+    padding: 0.65rem;
     font-size: 0.85rem;
   }
   
   .donate-form .btn-donate-now {
-    padding: 0.75rem;
-    font-size: 0.9rem;
+    padding: 0.65rem;
+    font-size: 0.85rem;
   }
   
   /* Donors Section */
@@ -3229,12 +3267,7 @@ h6,
   }
   
   .card-item-styled {
-    padding-bottom: 15px;
-    margin-bottom: 0.75rem;
-  }
-  
-  .team-comment-wrapper {
-    margin-bottom: 1.25rem;
+    padding-bottom: 20px;
   }
   
   .team-comment {
@@ -3244,9 +3277,9 @@ h6,
   }
   
   .team-photo {
-    width: 90px;
-    height: 90px;
-    border-width: 3px;
+    width: 70px;
+    height: 70px;
+    border-width: 2px;
   }
   
   .card-item-styled h5 {
@@ -3404,6 +3437,51 @@ h6,
     font-size: 0.7rem;
   }
   
+  /* Donation Section - 320px and below */
+  .donate-text {
+    padding: 0.1rem 0.15rem !important;
+    min-height: auto;
+    max-height: 2rem;
+    aspect-ratio: auto;
+  }
+  
+  .donate-text h1 {
+    font-size: 0.16rem;
+    margin-bottom: 0.03rem !important;
+    line-height: 0.95;
+    word-spacing: -0.05rem;
+  }
+  
+  .donate-text p {
+    font-size: 0.13rem;
+    line-height: 0.95;
+    word-spacing: -0.05rem;
+  }
+  
+  .donate-form {
+    padding: 0.5rem 0.5rem;
+  }
+  
+  .donate-form .form-control {
+    padding: 0.35rem;
+    font-size: 0.6rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .donate-form .btn-donate-now {
+    padding: 0.35rem;
+    font-size: 0.65rem;
+  }
+  
+  .donate-form .btn-group {
+    gap: 0.25rem;
+  }
+  
+  .donate-form .btn-group label {
+    font-size: 0.55rem;
+    padding: 0.25rem 0.35rem;
+  }
+
   /* Feature Boxes - 320px */
   .sanrakshan-features {
     padding: 15px 0;
