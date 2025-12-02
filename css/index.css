@@ -1872,7 +1872,7 @@ h6,
     min-width: 320px;
   }
   
-  /* SDGs - Single row horizontal scroll on tablet */
+  /* SDGs - Single column vertical stack on tablet */
   .achieved-sdgs {
     padding: 3rem 0;
   }
@@ -1885,27 +1885,16 @@ h6,
   
   .achieved-sdgs .row {
     display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    gap: 1rem !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
     padding: 0 1rem;
     margin: 0 !important;
-    scrollbar-width: thin;
-  }
-  
-  .achieved-sdgs .row::-webkit-scrollbar {
-    height: 6px;
-  }
-  
-  .achieved-sdgs .row::-webkit-scrollbar-thumb {
-    background: rgba(10, 66, 117, 0.3);
-    border-radius: 3px;
   }
   
   .achieved-sdgs .row > div {
-    flex: 0 0 auto !important;
-    width: 150px !important;
+    width: 200px !important;
+    max-width: 200px !important;
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -2231,7 +2220,7 @@ h6,
     transform: translateY(-8px) rotateY(0deg);
   }
   
-  /* SDGs - Single row horizontal scroll on mobile */
+  /* SDGs - Single column vertical stack on mobile */
   .achieved-sdgs {
     padding: 2.5rem 0;
   }
@@ -2244,18 +2233,16 @@ h6,
   
   .achieved-sdgs .row {
     display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    gap: 1rem !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.25rem !important;
     padding: 0 1rem;
     margin: 0 !important;
-    scrollbar-width: thin;
   }
   
   .achieved-sdgs .row > div {
-    flex: 0 0 auto !important;
-    width: 140px !important;
+    width: 180px !important;
+    max-width: 180px !important;
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -2611,17 +2598,16 @@ h6,
   
   .achieved-sdgs .row {
     display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    gap: 0.75rem !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
     padding: 0 0.75rem;
     margin: 0 !important;
   }
   
   .achieved-sdgs .row > div {
-    flex: 0 0 auto !important;
-    width: 120px !important;
+    width: 160px !important;
+    max-width: 160px !important;
     margin: 0 !important;
     padding: 0 !important;
   }
