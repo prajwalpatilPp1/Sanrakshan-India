@@ -71,11 +71,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 nav: false,
                 navSpeed: 2000,
                 dragEndSpeed: 2000,
+                mouseDrag: true,
+                touchDrag: true,
+                pullDrag: true,
+                freeDrag: false,
                 responsive: { 
-                    0: { items: 1 }, 
-                    576: { items: 2 }, 
-                    768: { items: 3 }, 
-                    992: { items: 4 } 
+                    0: { items: 1, mouseDrag: true, touchDrag: true }, 
+                    576: { items: 2, mouseDrag: true, touchDrag: true }, 
+                    768: { items: 3, mouseDrag: true, touchDrag: true }, 
+                    992: { items: 4, mouseDrag: true, touchDrag: true } 
                 }
             });
 
@@ -86,6 +90,15 @@ document.addEventListener('DOMContentLoaded', function () {
             jQuery('.custom-owl-prev').click(function() {
                 donorsCarousel.trigger('prev.owl.carousel', [2000]);
             });
+            
+            // Add grab cursor for drag indication
+            donorsCarousel.on('mousedown.owl.core', function() {
+                jQuery(this).css('cursor', 'grabbing');
+            });
+            donorsCarousel.on('mouseup.owl.core', function() {
+                jQuery(this).css('cursor', 'grab');
+            });
+            donorsCarousel.css('cursor', 'grab');
         }
     }
 
@@ -451,4 +464,147 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     init();
+});
+
+// --- Drag/Swipe Functionality for Carousels ---
+
+// Enable drag/swipe for Bootstrap carousel
+function initCarouselDrag() {
+    const carousel = document.getElementById('sanrakshanCarousel');
+    if (!carousel) return;
+
+    let startX = 0;
+    let isDragging = false;
+    const threshold = 50; // minimum distance for swipe
+
+    carousel.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    }, { passive: true });
+
+    carousel.addEventListener('touchmove', function(e) {
+        if (!isDragging) return;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', function(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+
+        if (Math.abs(diff) > threshold) {
+            const bsCarousel = bootstrap.Carousel.getInstance(carousel) || new bootstrap.Carousel(carousel);
+            if (diff > 0) {
+                bsCarousel.next();
+            } else {
+                bsCarousel.prev();
+            }
+        }
+    }, { passive: true });
+
+    // Mouse drag for desktop
+    let mouseStartX = 0;
+    let isMouseDragging = false;
+
+    carousel.addEventListener('mousedown', function(e) {
+        mouseStartX = e.clientX;
+        isMouseDragging = true;
+        carousel.style.cursor = 'grabbing';
+    });
+
+    carousel.addEventListener('mousemove', function(e) {
+        if (!isMouseDragging) return;
+        e.preventDefault();
+    });
+
+    carousel.addEventListener('mouseup', function(e) {
+        if (!isMouseDragging) return;
+        isMouseDragging = false;
+        carousel.style.cursor = 'grab';
+        
+        const mouseEndX = e.clientX;
+        const diff = mouseStartX - mouseEndX;
+
+        if (Math.abs(diff) > threshold) {
+            const bsCarousel = bootstrap.Carousel.getInstance(carousel) || new bootstrap.Carousel(carousel);
+            if (diff > 0) {
+                bsCarousel.next();
+            } else {
+                bsCarousel.prev();
+            }
+        }
+    });
+
+    carousel.addEventListener('mouseleave', function() {
+        isMouseDragging = false;
+        carousel.style.cursor = 'grab';
+    });
+
+    // Set initial cursor
+    carousel.style.cursor = 'grab';
+}
+
+// Enable drag/swipe for Focus Areas
+function initFocusAreasDrag() {
+    const scrollContainer = document.querySelector('.focus-cards-marquee');
+    if (!scrollContainer) return;
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    scrollContainer.addEventListener('mousedown', function(e) {
+        isDown = true;
+        scrollContainer.classList.add('dragging');
+        startX = e.pageX - scrollContainer.offsetLeft;
+        scrollLeft = scrollContainer.scrollLeft;
+        scrollContainer.style.cursor = 'grabbing';
+    });
+
+    scrollContainer.addEventListener('mouseleave', function() {
+        isDown = false;
+        scrollContainer.classList.remove('dragging');
+        scrollContainer.style.cursor = 'grab';
+    });
+
+    scrollContainer.addEventListener('mouseup', function() {
+        isDown = false;
+        scrollContainer.classList.remove('dragging');
+        scrollContainer.style.cursor = 'grab';
+    });
+
+    scrollContainer.addEventListener('mousemove', function(e) {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - scrollContainer.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollContainer.scrollLeft = scrollLeft - walk;
+    });
+
+    // Touch events for mobile
+    let touchStartX = 0;
+    let touchScrollLeft = 0;
+
+    scrollContainer.addEventListener('touchstart', function(e) {
+        touchStartX = e.touches[0].pageX - scrollContainer.offsetLeft;
+        touchScrollLeft = scrollContainer.scrollLeft;
+    }, { passive: true });
+
+    scrollContainer.addEventListener('touchmove', function(e) {
+        const x = e.touches[0].pageX - scrollContainer.offsetLeft;
+        const walk = (x - touchStartX) * 2;
+        scrollContainer.scrollLeft = touchScrollLeft - walk;
+    }, { passive: true });
+
+    // Set initial cursor
+    scrollContainer.style.cursor = 'grab';
+}
+
+// Initialize all drag functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait a bit for Bootstrap to initialize
+    setTimeout(function() {
+        initCarouselDrag();
+    }, 500);
 });
