@@ -1,0 +1,108 @@
+/**********************************/
+/******* LEGAL PAGE STYLES ********/
+/**********************************/
+
+/* Spinner */
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Spinner Border - Bootstrap handles this, no override needed */
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(rgba(10, 66, 117, .9), rgba(10, 66, 117, .9)), url(../img/carousel-1.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--bs-white);
+}
+
+/* Back to Top Button - Already defined in global.css */
+/* ------------------------------------------
+   Legal Section Responsive Tweaks
+-------------------------------------------*/
+#legal {
+    background-color: #ffffff;
+}
+
+/* Only add minimal custom styling - Bootstrap handles most of this */
+#legal .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 15px;
+}
+
+#legal .list-group-item span {
+    flex: 1;
+    font-weight: 500;
+}
+
+#legal .list-group-item div {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+}
+
+/* Large tablets and below - keep buttons on same line but allow wrapping if needed */
+@media (max-width: 991px) {
+    #legal .list-group-item {
+        flex-wrap: wrap;
+    }
+}
+
+/* Medium devices - stack on smaller screens */
+@media (max-width: 768px) {
+    #legal .list-group-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    #legal .list-group-item span {
+        width: 100%;
+    }
+
+    #legal .list-group-item div {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+/* Small devices */
+@media (max-width: 576px) {
+    #legal p {
+        text-align: left !important;
+    }
+    
+    #legal .list-group-item div {
+        flex-wrap: wrap;
+    }
+}
+
+/* Text Utilities - Only custom ones not in Bootstrap */
+.text-justify {
+    text-align: justify;
+}
+
+/* Bootstrap 5.3.3 already provides all other utilities we need:
+   - .shadow-sm, .mb-0, .mb-4, .mt-3, .py-3, .mx-auto
+   - .d-flex, .justify-content-between, .justify-content-center, .align-items-center
+   - .text-center, .row, .col-*, .g-*
+   - .btn, .btn-sm, .btn-outline-*, .card, .card-header, .list-group, etc.
+   
+   DO NOT override Bootstrap classes - it causes layout distortion!
+*/

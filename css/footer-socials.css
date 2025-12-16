@@ -1,0 +1,74 @@
+/* From Uiverse.io by vinodjangid07 */
+.footer-social-card {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Reduced gap for a tighter look */
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 45px; /* Slightly smaller for a sleeker look */
+  height: 45px;
+  border-radius: 8px; /* Rounded corners */
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+
+/* Facebook hover */
+.container-fb:hover {
+  background-color: #1877F2;
+  transition-duration: .3s;
+}
+
+/* Twitter hover */
+.container-tw:hover {
+  background-color: #000000; /* Black for X/Twitter */
+  transition-duration: .3s;
+}
+
+/* YouTube hover */
+.container-yt:hover {
+  background-color: #FF0000;
+  transition-duration: .3s;
+}
+
+/* LinkedIn hover */
+.container-li:hover {
+  background-color: #0072b1;
+  transition-duration: .3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: .3s;
+}
+
+.social-icon {
+  width: 17px;
+  color: rgb(255, 255, 255);
+  transition: transform 0.3s ease-out;
+  opacity: 1; /* Ensure icon is visible by default */
+}
+
+.socialContainer:hover .social-icon {
+  animation: slide-in-top 0.3s forwards;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

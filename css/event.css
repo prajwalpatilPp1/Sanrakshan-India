@@ -1,0 +1,145 @@
+/*****************************
+ *       EVENT PAGE STYLES
+ *****************************/
+
+/*****************************
+ *       VARIABLES
+ *****************************/
+:root {
+  --bs-tertiary: #797E88;
+  --color-primary: #0a4275;
+  --color-primary-dark: #05264a;
+}
+
+/*****************************
+ *       SPINNER
+ *****************************/
+#spinner {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s ease-out, visibility 0s linear .5s;
+  z-index: 99999;
+}
+
+#spinner.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .5s ease-out, visibility 0s linear 0s;
+}
+
+/*****************************
+ *       PAGE HEADER
+ *****************************/
+.page-header {
+  background: linear-gradient(rgba(10, 66, 117, .9), rgba(10, 66, 117, .9)), url(../img/carousel-1.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: var(--bs-white);
+}
+
+/*****************************
+ *       SECTION TITLE
+ *****************************/
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::before {
+  position: absolute;
+  content: "";
+  width: 45px;
+  height: 2px;
+  top: 50%;
+  left: -55px;
+  margin-top: -1px;
+  background: var(--bs-primary);
+}
+
+.section-title::after {
+  position: absolute;
+  content: "";
+  width: 45px;
+  height: 2px;
+  top: 50%;
+  right: -55px;
+  margin-top: -1px;
+  background: var(--bs-primary);
+}
+
+/*****************************
+ *       EVENT ITEM
+ *****************************/
+.event-item {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.event-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.event-item img {
+  border-radius: 10px;
+}
+
+.event-item a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.event-item a:hover {
+  color: var(--color-primary-dark);
+}
+
+/*****************************
+ *       BANNER
+ *****************************/
+.banner {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.banner-inner {
+  border-radius: 15px;
+}
+
+/*****************************
+ *       WOW ANIMATIONS
+ *****************************/
+.wow {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slideInDown {
+  animation-name: slideInDown;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}

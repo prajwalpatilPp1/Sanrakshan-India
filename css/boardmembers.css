@@ -1,0 +1,108 @@
+/**********************************/
+/****** BOARD MEMBERS PAGE ********/
+/**********************************/
+
+/* Tagline Section */
+.board-tagline-section {
+    background: linear-gradient(135deg, #1e5a8e 0%, #0a4275 100%) !important;
+    padding: 4rem 0;
+}
+
+.board-tagline-section h3 {
+    color: #ffffff !important;
+}
+
+.board-tagline-section p {
+    color: #ffffff !important;
+}
+
+.pro-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.pro-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.pro-card-image {
+    height: 50%;
+    width: 100%;
+    background-size: cover;
+    background-position: center top;
+    transition: transform 0.4s ease;
+}
+
+.pro-card:hover .pro-card-image {
+    transform: scale(1.05);
+}
+
+.pro-card-content {
+    height: 50%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.pro-card-name {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0a4275;
+    margin-bottom: 0.25rem;
+}
+
+.pro-card-title {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Pushes socials to the bottom */
+}
+
+.pro-card-socials {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.pro-card-socials .social-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f2f5;
+    color: #0a4275;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pro-card-socials .social-icon:hover {
+    background: #0a4275;
+    color: #fff;
+}
+
+/**********************************/
+/****** MEMBER MODAL STYLES *******/
+/**********************************/
+.member-modal-content {
+    border-radius: 15px;
+    border: none;
+}
+.member-modal-content .modal-header {
+    background-color: #0a4275;
+    color: #fff;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+}
+.member-modal-content .modal-title { font-weight: 600; }
+.member-modal-content .btn-close { filter: invert(1) grayscale(100%) brightness(200%); }

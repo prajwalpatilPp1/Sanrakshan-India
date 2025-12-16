@@ -1,0 +1,103 @@
+/**********************************/
+/******** PATRONS PAGE ********/
+/**********************************/
+.team-card-pro {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-card-pro:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.team-card-pro-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Create a square container */
+    overflow: hidden;
+}
+
+.team-card-pro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top; /* Focus on the face */
+    transition: transform 0.4s ease;
+}
+
+.team-card-pro:hover .team-card-pro-image img {
+    transform: scale(1.05);
+}
+
+.team-card-pro-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    white-space: nowrap;
+    flex-direction: column;
+}
+
+.team-card-pro-name {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0a4275;
+    white-space: nowrap;
+    margin-bottom: 0.25rem;
+}
+
+.team-card-pro-title {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    white-space: nowrap;
+}
+
+.team-card-pro-content .btn {
+    margin-top: auto; /* Pushes the button to the bottom */
+}
+   
+.patron-card:hover .patron-image {
+    transform: scale(1.1);
+}
+
+.patron-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+    color: #fff;
+    text-align: center;
+}
+
+.patron-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.read-more-btn {
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 50px;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.patron-card:hover .read-more-btn {
+    opacity: 1;
+    transform: translateY(0);
+}

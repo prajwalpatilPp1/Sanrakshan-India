@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Donate - Sanrakshan India</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="css/global.css" rel="stylesheet">
+    <link href="css/donation.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="donation-hero">
+        <div class="container text-center">
+            <h1 class="hero-title">Make a Difference Today</h1>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="donation-section">
+        <div class="container">
+            <!-- Donation Cards -->
+            <div class="row g-4 justify-content-center">
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="donation-card">
+                        <div class="card-image">
+                            <img src="img/whatwedo/childcare.jpeg" alt="Education">
+                        </div>
+                        <div class="card-content">
+                            <h5>Support a Child's Education for a Year</h5>
+                            <div class="custom-amount">
+                                <input type="number" class="amount-input" placeholder="₹ Enter amount" min="100" data-purpose="education">
+                            </div>
+                            <button class="btn-donate-card">Donate Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="donation-card">
+                        <div class="card-image">
+                            <img src="img/whatwedo/school.png" alt="Food">
+                        </div>
+                        <div class="card-content">
+                            <h5>Support a Child's Food & Nutrition for a Year</h5>
+                            <div class="custom-amount">
+                                <input type="number" class="amount-input" placeholder="₹ Enter amount" min="100" data-purpose="food">
+                            </div>
+                            <button class="btn-donate-card">Donate Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="donation-card">
+                        <div class="card-image">
+                            <img src="img/whatwedo/childprotect.jpeg" alt="Shelter">
+                        </div>
+                        <div class="card-content">
+                            <h5>Support a Child for Shelter and Healthcare</h5>
+                            <div class="custom-amount">
+                                <input type="number" class="amount-input" placeholder="₹ Enter amount" min="100" data-purpose="shelter">
+                            </div>
+                            <button class="btn-donate-card">Donate Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Donation Form Section -->
+            <div class="donation-form-section">
+                <div class="row g-0 shadow-lg">
+                    <!-- Text Section -->
+                    <div class="col-lg-7 donate-text">
+                        <div class="p-5">
+                            <h1 class="display-6 mb-4">Let's Donate to Needy People for Better Lives</h1>
+                            <p class="mb-4">Your generous contribution helps us provide essential care, education, and support to vulnerable children. Every donation makes a real difference in transforming lives and building brighter futures.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Form Section -->
+                    <div class="col-lg-5 donate-form">
+                        <div class="p-5 d-flex flex-column justify-content-center h-100">
+                            <h3 class="text-white mb-4">Ready to Make a Difference?</h3>
+                            <button type="button" class="btn btn-donate-now" id="donate-now-btn">
+                                <i class="fas fa-heart me-2"></i>Donate Now
+                            </button>
+                            <a href="https://danamojo.org/howto" target="_blank" class="text-white text-center mt-3 text-decoration-none">
+                                <i class="fas fa-question-circle me-2"></i>Need Help Donating?
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Donate Section -->
+            <div class="why-donate-section">
+                <h3 class="text-center mb-4">Why Your Donation Matters</h3>
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <div class="impact-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h5>Education</h5>
+                            <p>Provide quality education and learning resources</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="impact-card">
+                            <i class="fas fa-utensils"></i>
+                            <h5>Nutrition</h5>
+                            <p>Ensure nutritious meals for healthy growth</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="impact-card">
+                            <i class="fas fa-home"></i>
+                            <h5>Shelter</h5>
+                            <p>Safe and secure living environment</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="impact-card">
+                            <i class="fas fa-heartbeat"></i>
+                            <h5>Healthcare</h5>
+                            <p>Regular health checkups and medical care</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        const DONATION_FORM_URL = 'https://danamojo.org/dm/admin/ngologin';
+
+        // Card Donate Buttons
+        document.querySelectorAll('.btn-donate-card').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const card = e.target.closest('.donation-card');
+                const amountInput = card.querySelector('.amount-input');
+                const amount = parseInt(amountInput.value);
+                const purpose = amountInput.getAttribute('data-purpose');
+                
+                if (!amount || amount < 100) {
+                    alert('Please enter a valid amount (minimum ₹100)');
+                    amountInput.focus();
+                    return;
+                }
+                
+                // Store donation details and redirect
+                sessionStorage.setItem('donationAmount', amount);
+                sessionStorage.setItem('donationPurpose', purpose);
+                window.open(DONATION_FORM_URL, '_blank');
+            });
+        });
+
+        // Donate Now Button (from form section)
+        document.getElementById('donate-now-btn').addEventListener('click', () => {
+            window.open(DONATION_FORM_URL, '_blank');
+        });
+
+        // Spinner
+        setTimeout(() => {
+            document.getElementById('spinner').classList.remove('show');
+        }, 500);
+    </script>
+</body>
+</html>

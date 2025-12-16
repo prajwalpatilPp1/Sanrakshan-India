@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Our Board Members - Sanrakshan India</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link href="img/favicon.png" rel="icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Animation & Carousel Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <!-- Global Stylesheet -->
+    <link href="css/global.css" rel="stylesheet">
+
+    <!-- Board Members Stylesheet -->
+    <link href="css/boardmembers.css" rel="stylesheet">
+    <link href="css/team.css" rel="stylesheet">
+    <link href="css/new-footer-socials.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ====================== LOADING SPINNER ====================== -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 
+        top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;"></div>
+    </div>
+
+    <!-- ====================== HEADER PLACEHOLDER ====================== -->
+    <div id="header-placeholder"></div>
+
+ <!-- Page Header Start -->
+    <div class="container-fluid page-header py-3 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-3">
+            <h1 class="display-3 animated slideInDown" style="color:#fff">Our Board Members</h1>
+        </div>
+    </div>
+
+    <!-- ===============================================================
+            BOARD MEMBERS SECTION (Responsive)
+         ============================================================== -->
+    <div class="container-fluid py-3 team-section" id="boardmembers">
+        <div class="container">
+
+            <!-- Dynamic Board Member Cards -->
+            <div id="board-members-container" class="row justify-content-center">
+                <!-- Cards injected by JavaScript -->
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ===============================================================
+            PROFESSIONAL TAGLINE (Fully Responsive)
+         ============================================================== -->
+    <div class="container-fluid py-5 text-white board-tagline-section">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+
+                <div class="col-lg-10 col-xl-9">
+
+                    <!-- Tagline Title -->
+                    <h3 class="display-5 fw-semibold mb-4 wow fadeInUp" data-wow-delay="0.1s" style="color: white;">
+                        "Empowering Leadership, Transforming Lives"
+                    </h3>
+
+                    <!-- Description -->
+                    <p class="fs-5 opacity-95 wow fadeInUp" data-wow-delay="0.3s" style="color:#fff"> 
+                        Our distinguished board members represent a collective commitment to child welfare and
+                        social justice. Their expertise in child protection, healthcare, finance, and strategic
+                        development ensures the long-term success of Sanrakshan's mission.
+                    </p>
+
+                    <!-- Counter Stats -->
+                    <div class="row text-center mb-4 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="col-md-4 mb-3">
+                            <h3 class="display-6" style="color:#ffc107;">200</h3>
+                            <p class="mb-0 fs-6" style="color:#fff">Years of Combined Experience</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h3 class="display-6" style="color:#ffc107;">8</h3>
+                            <p class="mb-0 fs-6" style="color:#fff">Dedicated Board Members</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <h3 class="display-6" style="color:#ffc107;">1</h3>
+                            <p class="mb-0 fs-6" style="color:#fff">Shared Vision for Change</p>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                 <!--    <div class="wow fadeInUp" data-wow-delay="0.6s">
+                        <a href="about.html" class="btn btn-warning btn-lg px-5 py-3 me-3 fw-bold">Our Mission</a>
+                        <a href="contact.html" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold">Join Our Cause</a>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===============================================================
+            UNIVERSAL MODAL FOR BOARD MEMBER DETAILS
+         ============================================================== -->
+    <div class="modal fade" id="memberModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content member-modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Board Member Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <!-- Injected by JS -->
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ====================== FOOTER PLACEHOLDER ====================== -->
+    <div id="footer-placeholder"></div>
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-light btn-lg-square back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+
+    <!-- ====================== JS LIBRARIES ====================== -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+    <!-- Page-Specific Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
+

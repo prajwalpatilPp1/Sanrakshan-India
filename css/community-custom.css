@@ -1,0 +1,264 @@
+/**********************************/
+/***** COMMUNITY PAGE CUSTOM ******/
+/**********************************/
+
+/* Custom hero with animated gradient overlay */
+.community-hero-unique {
+    position: relative;
+    overflow: hidden;
+}
+
+.community-hero-unique::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 215, 0, 0.2) 25%, 
+        rgba(52, 152, 219, 0.2) 50%, 
+        rgba(46, 204, 113, 0.2) 75%, 
+        transparent 100%);
+    animation: shimmer 8s infinite;
+    z-index: 2;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Unique program cards with 3D effect */
+.program-card-unique {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+    overflow: hidden;
+}
+
+.program-card-unique::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.program-card-unique:hover {
+    transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.5);
+}
+
+.program-card-unique .program-icon-unique {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    position: relative;
+    z-index: 1;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.program-card-unique .program-icon-unique i {
+    font-size: 50px;
+    color: #ffffff;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.program-card-unique h3 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.program-card-unique p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 16px;
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+}
+
+/* Unique section divider with animated icons */
+.section-divider-unique {
+    text-align: center;
+    margin: 60px 0;
+    position: relative;
+}
+
+.section-divider-unique::before,
+.section-divider-unique::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #667eea, transparent);
+}
+
+.section-divider-unique::before {
+    left: 0;
+}
+
+.section-divider-unique::after {
+    right: 0;
+}
+
+.section-divider-unique .divider-icon {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    line-height: 60px;
+    color: white;
+    font-size: 28px;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    animation: pulse-icon 2s infinite;
+}
+
+@keyframes pulse-icon {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+    }
+}
+.fbc-timeline-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.fbc-timeline-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.fbc-timeline-header h2 {
+    margin-bottom: 6px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.timeline2 {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline2::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #d0d8e4;
+    transform: translateX(-50%);
+}
+
+.timeline2-item {
+    position: relative;
+    width: calc(50% - 40px);
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.timeline2-item.left {
+    left: 0;
+    margin-right: auto;
+}
+
+.timeline2-item.right {
+    left: 50%;
+    margin-left: 40px;
+}
+
+.timeline2-item::after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: 3px solid #0a4275;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.timeline2-item.left::after {
+    right: -8px;
+}
+
+.timeline2-item.right::after {
+    left: -8px;
+}
+
+.timeline2-item .step-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #0a4275;
+}
+
+.timeline2-item p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+.timeline2-item.c1 {
+    background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+}
+
+.timeline2-item.c2 {
+    background: linear-gradient(135deg, #f3e5f5 0%, #ffffff 100%);
+}
+
+
+
+
+@media (max-width: 830px) {
+    .timeline2::before {
+        left: 20px;
+    }
+    .timeline2-item {
+        width: calc(100% - 40px);
+        left: 0 !important;
+        margin-left: 40px !important;
+    }
+    .timeline2-item::after {
+        left: -8px;
+    }
+}

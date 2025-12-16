@@ -1,0 +1,76 @@
+/* Footer Text Color Fix - Ensures consistent white text across all pages */
+/* Override body color for footer */
+.container-fluid.footer,
+.container-fluid.footer *:not(.social-button):not(.icon):not(i),
+.container-fluid.footer p,
+.container-fluid.footer div:not(.footer-button-box):not(.footer-button-box-wrapper),
+.container-fluid.footer span,
+.container-fluid.footer li,
+.footer-office-section,
+.footer-office-section *,
+.footer-links-section,
+.footer-links-section *,
+.footer-gallery-section,
+.footer-gallery-section * {
+    color: #ffffff !important;
+}
+
+.container-fluid.footer h4,
+.container-fluid.footer h5,
+.container-fluid.footer h6 {
+    color: #ffffff !important;
+}
+
+.container-fluid.footer .text-light {
+    color: #ffffff !important;
+}
+
+/* Footer Links Styling */
+.footer-links {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.footer-links li {
+    margin-bottom: 10px !important;
+    color: #ffffff !important;
+}
+
+.footer-links a,
+.footer-links a:link,
+.footer-links a:visited {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    display: inline-block !important;
+}
+
+.footer-links a:hover,
+.footer-links a:active {
+    color: #ffc107 !important;
+    padding-left: 5px !important;
+}
+
+.footer-links i {
+    color: #ffffff !important;
+}
+
+/* Copyright section */
+.copyright,
+.copyright * {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+.copyright a,
+.copyright a:link,
+.copyright a:visited {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.copyright a:hover,
+.copyright a:active {
+    color: #ffc107 !important;
+}
