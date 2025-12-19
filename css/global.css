@@ -841,18 +841,19 @@ p {
 @media (max-width: 576px) {
   /* Topbar - Keep horizontal, reduce spacing */
   .topbar-black {
-    padding: 0.25rem 0;
+    padding: 0.2rem 0;
   }
   
   .topbar-black .row {
-    padding: 0.15rem 0;
+    padding: 0.1rem 0;
   }
   
   .topbar-black .col-12 {
-    gap: 0.25rem;
+    gap: 0.15rem;
     flex-wrap: nowrap;
     overflow-x: auto;
     scrollbar-width: none;
+    justify-content: space-between;
   }
   
   .topbar-black .col-12::-webkit-scrollbar {
@@ -861,15 +862,24 @@ p {
   
   /* Contact info - ultra compact */
   .topbar-black span {
-    font-size: 0.65rem;
-    margin-right: 0.5rem !important;
+    font-size: 0.6rem;
+    margin-right: 0.3rem !important;
     white-space: nowrap;
+  }
+  
+  /* Hide icons on mobile to save space */
+  .topbar-black span i {
+    font-size: 0.55rem;
   }
   
   /* Social icons - smaller */
   .topbar-black a {
-    font-size: 0.75rem;
-    margin-right: 0.5rem !important;
+    font-size: 0.7rem;
+    margin-right: 0.3rem !important;
+  }
+  
+  .topbar-black a:last-child {
+    margin-right: 0 !important;
   }
   
   /* Navbar */
@@ -918,16 +928,20 @@ p {
 @media (max-width: 375px) {
   /* Topbar - Hide icons, keep horizontal */
   .topbar-black {
-    padding: 0.2rem 0;
+    padding: 0.15rem 0;
   }
   
   .topbar-black .row {
-    padding: 0.1rem 0;
+    padding: 0.05rem 0;
+  }
+  
+  .topbar-black .col-12 {
+    gap: 0.1rem;
   }
   
   .topbar-black span {
-    font-size: 0.6rem;
-    margin-right: 0.4rem !important;
+    font-size: 0.55rem;
+    margin-right: 0.25rem !important;
   }
   
   .topbar-black span i {
@@ -935,8 +949,12 @@ p {
   }
   
   .topbar-black a {
-    font-size: 0.7rem;
-    margin-right: 0.4rem !important;
+    font-size: 0.65rem;
+    margin-right: 0.25rem !important;
+  }
+  
+  .topbar-black a:last-child {
+    margin-right: 0 !important;
   }
   
   /* Navbar */
