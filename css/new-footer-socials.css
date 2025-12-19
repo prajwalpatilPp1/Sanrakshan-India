@@ -64,13 +64,17 @@
   background-color: #FF0000;
 }
 
+.footer-button-box .social-button.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
 .footer-button-box .social-button.linkedin:hover {
   background-color: #0072b1;
 }
 
 /* Add a placeholder for the expanded width to prevent layout shift */
 .footer-button-box-wrapper {
-    min-width: 270px;
+    min-width: 320px;
     margin-top: 10px;
     display: flex;
     justify-content: flex-start; /* Align to the left */

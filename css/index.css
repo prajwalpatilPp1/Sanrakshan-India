@@ -1192,6 +1192,35 @@ h6,
   filter: brightness(1.05);
 }
 
+/* Ensure all donor logos fit within their containers */
+.donors-carousel .item {
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.donors-carousel .item .d-flex {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  padding: 1rem !important;
+}
+
+.donors-carousel .item img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+}
+
+.donors-carousel .item .img-fluid {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
 @media (max-width: 991px) {
   .donors-section {
     padding: 60px 0 40px;
@@ -1210,37 +1239,186 @@ h6,
 
 @media (max-width: 767px) {
   .donors-section {
-    padding: 50px 0 35px;
+    padding: 50px 0 35px !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .donors-header {
-    margin-bottom: 40px;
+    margin-bottom: 40px !important;
+    display: block !important;
+    visibility: visible !important;
   }
   
   .donors-header .section-heading {
-    font-size: 2rem;
+    font-size: 2rem !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .donors-carousel-wrapper {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .donors-carousel {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .donors-carousel .owl-stage-outer {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .donors-carousel .owl-stage {
+    display: flex !important;
+    visibility: visible !important;
+  }
+  
+  .donors-carousel .owl-item {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .donors-carousel .item {
-    height: 200px;
-    padding: 30px 20px;
-    margin: 0 6px;
+    height: 200px !important;
+    padding: 30px 20px !important;
+    margin: 0 6px !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .donors-carousel .item img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+  }
+  
+  .donors-carousel .item .d-flex {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    padding: 1rem !important;
+    box-sizing: border-box !important;
+  }
+  
+  .donors-carousel .item .img-fluid {
+    max-width: 100% !important;
+    height: auto !important;
   }
 }
 
 @media (max-width: 575.98px) {
   .donors-section {
-    padding: 40px 0 30px;
+    padding: 40px 0 30px !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .donors-section .container {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .donors-header {
+    display: block !important;
+    visibility: visible !important;
   }
   
   .donors-header .section-heading {
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .donors-carousel-wrapper {
+    display: block !important;
+    visibility: visible !important;
+    overflow: visible !important;
+  }
+  
+  .donors-carousel {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .donors-carousel .owl-stage-outer {
+    display: block !important;
+    visibility: visible !important;
+    overflow: visible !important;
+  }
+  
+  .donors-carousel .owl-stage {
+    display: flex !important;
+    visibility: visible !important;
+  }
+  
+  .donors-carousel .owl-item {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .donors-carousel .item {
-    height: 170px;
-    padding: 20px 15px;
-    margin: 0 4px;
+    height: 170px !important;
+    padding: 20px 15px !important;
+    margin: 0 4px !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .donors-carousel .item img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+  }
+  
+  .donors-carousel .item .d-flex {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    padding: 0.75rem !important;
+    box-sizing: border-box !important;
+  }
+  
+  .donors-carousel .item .img-fluid {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Force all donor elements visible on mobile */
+  #donors-container,
+  #donors-container *,
+  .donors-carousel *,
+  .donors-section * {
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }
 
@@ -3740,47 +3918,97 @@ h6,
     padding: 0.5rem 0.7rem;
   }
   
-  /* Donors Section */
+  /* Donors Section - FORCE VISIBLE */
   .donors-section {
-    padding: 30px 0 20px;
-    overflow: visible;
-    display: block;
+    padding: 30px 0 20px !important;
+    overflow: visible !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: auto !important;
   }
   
   .donors-section .container {
-    max-width: 100%;
-    padding: 0 0.5rem;
-    overflow: visible;
+    max-width: 100% !important;
+    padding: 0 0.5rem !important;
+    overflow: visible !important;
+    display: block !important;
+    visibility: visible !important;
   }
   
   .donors-header {
-    margin-bottom: 30px;
-    display: block;
+    margin-bottom: 30px !important;
+    display: block !important;
+    visibility: visible !important;
   }
   
   .donors-header .section-heading {
-    font-size: 1.2rem;
-    word-wrap: break-word;
+    font-size: 1.2rem !important;
+    word-wrap: break-word !important;
+    display: block !important;
+    visibility: visible !important;
   }
   
   .donors-carousel-wrapper {
-    padding: 20px 0;
-    overflow: visible;
+    padding: 20px 0 !important;
+    overflow: visible !important;
+    display: block !important;
+    visibility: visible !important;
+    position: relative !important;
   }
   
   .donors-carousel {
-    overflow: visible;
+    overflow: visible !important;
+    display: block !important;
+    visibility: visible !important;
+    width: 100% !important;
+  }
+  
+  .donors-carousel .owl-stage-outer {
+    overflow: visible !important;
+    display: block !important;
+  }
+  
+  .donors-carousel .owl-stage {
+    display: flex !important;
+    visibility: visible !important;
+  }
+  
+  .donors-carousel .owl-item {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .donors-carousel .item {
-    height: 140px;
-    padding: 12px 8px;
-    margin: 0 2px;
+    height: 140px !important;
+    padding: 12px 8px !important;
+    margin: 0 2px !important;
+    display: flex !important;
+    visibility: visible !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
   .donors-carousel img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    display: block !important;
+    visibility: visible !important;
+    object-fit: contain !important;
+  }
+  
+  /* Custom navigation buttons */
+  .custom-owl-nav {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .custom-owl-prev,
+  .custom-owl-next {
+    display: block !important;
+    visibility: visible !important;
   }
   
   /* Awards Section */
@@ -4004,21 +4232,110 @@ h6,
     display: block !important;
     overflow: visible !important;
     padding: 15px 0 !important;
+    visibility: visible !important;
+    position: relative !important;
   }
   
   .donors-carousel {
     display: block !important;
     visibility: visible !important;
+    overflow: visible !important;
+    width: 100% !important;
+    opacity: 1 !important;
   }
   
   .donors-carousel .owl-stage-outer {
     overflow: visible !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .donors-carousel .owl-stage {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .donors-carousel .owl-item {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .donors-carousel .item {
-    height: 130px !important;
-    padding: 10px 6px !important;
+    height: 110px !important;
+    padding: 8px 4px !important;
     margin: 0 2px !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #fff !important;
+  }
+  
+  .donors-carousel .item img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+  
+  /* Navigation buttons for donors carousel */
+  .custom-owl-nav {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .custom-owl-prev,
+  .custom-owl-next {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 12px !important;
+  }
+  
+  /* Fallback: If carousel doesn't initialize, show logos in a simple grid */
+  #donors-container {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: 120px !important;
+  }
+  
+  #donors-container .item {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: 100px !important;
+  }
+  
+  #donors-container .item > * {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  #donors-container img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-width: 50px !important;
+    min-height: 50px !important;
+  }
+  
+  /* Force all donor-related elements to be visible */
+  .donors-section *,
+  .donors-carousel *,
+  #donors-container * {
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   /* Testimonials - FORCE VISIBLE */
@@ -4490,9 +4807,98 @@ h6,
     height: 60px !important;
   }
   
-  /* Donors */
+  /* Donors - FORCE VISIBLE */
+  .donors-section {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    padding: 25px 0 !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+  
+  .donors-section .container {
+    display: block !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    padding: 0 0.4rem !important;
+  }
+  
+  .donors-header {
+    display: block !important;
+    visibility: visible !important;
+    margin-bottom: 20px !important;
+  }
+  
   .donors-header .section-heading {
     font-size: 1.1rem !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .donors-carousel-wrapper {
+    display: block !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    padding: 15px 0 !important;
+    position: relative !important;
+  }
+  
+  .donors-carousel {
+    display: block !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    width: 100% !important;
+  }
+  
+  .donors-carousel .owl-stage-outer {
+    display: block !important;
+    visibility: visible !important;
+    overflow: visible !important;
+  }
+  
+  .donors-carousel .owl-stage {
+    display: flex !important;
+    visibility: visible !important;
+  }
+  
+  .donors-carousel .owl-item {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .donors-carousel .item {
+    display: flex !important;
+    visibility: visible !important;
+    height: 120px !important;
+    padding: 10px 6px !important;
+    margin: 0 2px !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .donors-carousel img {
+    display: block !important;
+    visibility: visible !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+  }
+  
+  /* Custom navigation buttons */
+  .custom-owl-nav {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .custom-owl-prev,
+  .custom-owl-next {
+    display: block !important;
+    visibility: visible !important;
+    width: 30px !important;
+    height: 30px !important;
   }
   
   /* Awards */
