@@ -1,45 +1,246 @@
-/* Donation Page Specific Styles Only */
+/* Donation Page Specific Styles */
 
-/* Donation Section - Clean and Simple */
-.donation-section {
-    padding: 50px 0;
-    margin-top: 100px;
+/*****************************
+ *   HERO SECTION
+ *****************************/
+.donation-hero {
+    position: relative;
+    padding: 60px 0 30px;
     background: #ffffff;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
-.donation-section .container {
+.donation-hero .container {
     max-width: 1200px;
 }
 
-/* Danamojo Widget */
-#ngoContentContainer {
-    min-height: 500px;
-    width: 100%;
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0;
+    padding-right: 2rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .donation-section {
-        padding: 40px 0;
-        margin-top: 80px;
+.hero-title {
+    font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 0.8rem;
+    text-transform: capitalize;
+    letter-spacing: -2px;
+    line-height: 0.95;
+    font-family: 'Josefin Sans', serif;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 1.8vw, 1.4rem);
+    color: #333333;
+    margin-bottom: 7rem;
+    line-height: 1.25;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.btn-donate-now {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    background: #ffc107;
+    color: #000000;
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+.btn-donate-now:hover {
+    background: #ffb300;
+    color: #000000;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 193, 7, 0.5);
+}
+
+/* Hero Image */
+.hero-image {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 420px;
+    height: 420px;
+}
+
+.main-image {
+    width: 420px;
+    height: 420px;
+    object-fit: cover;
+    border: 10px solid #ffffff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.secondary-image {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border: 12px solid #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: -25px;
+    left: -60px;
+    z-index: 1;
+}
+
+/*****************************
+ *   RESPONSIVE STYLES
+ *****************************/
+@media (max-width: 991.98px) {
+    .donation-hero {
+        padding: 100px 0 60px;
+        min-height: auto;
     }
     
-    #ngoContentContainer {
-        min-height: 450px;
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .btn-donate-now {
+        padding: 1rem 2.8rem;
+        font-size: 1.2rem;
+    }
+    
+    .image-wrapper {
+        width: 450px;
+        height: 450px;
+    }
+    
+    .main-image {
+        width: 450px;
+        height: 450px;
+    }
+    
+    .secondary-image {
+        width: 250px;
+        height: 250px;
+        border: 15px solid #ffffff;
+        top: 40px;
+        left: -125px;
     }
 }
 
-@media (max-width: 576px) {
-    .donation-section {
-        padding: 30px 0;
-        margin-top: 70px;
+@media (max-width: 767.98px) {
+    .donation-hero {
+        padding: 80px 0 50px;
+        text-align: center;
     }
     
-    .donation-section .container {
-        padding: 0 15px;
+    .hero-content {
+        padding: 1rem 0;
     }
     
-    #ngoContentContainer {
-        min-height: 400px;
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .btn-donate-now {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .hero-image {
+        margin-top: 3rem;
+        justify-content: center;
+    }
+    
+    .image-wrapper {
+        width: 350px;
+        height: 350px;
+        margin: 0 auto;
+    }
+    
+    .main-image {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .secondary-image {
+        width: 200px;
+        height: 200px;
+        border: 12px solid #ffffff;
+        top: 30px;
+        left: -100px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .donation-hero {
+        padding: 60px 0 40px;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        letter-spacing: -1px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .btn-donate-now {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .hero-image {
+        margin-top: 2.5rem;
+    }
+    
+    .image-wrapper {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .main-image {
+        width: 280px;
+        height: 280px;
+        border: 10px solid #ffffff;
+    }
+    
+    .secondary-image {
+        width: 160px;
+        height: 160px;
+        border: 10px solid #ffffff;
+        top: 25px;
+        left: -80px;
     }
 }
