@@ -355,11 +355,11 @@ h6,
   background-position: center;
   background-repeat: no-repeat;
   background-color: #f0f0f0;
+  opacity: 1;
   transition: opacity 0.3s ease;
-}
-
-.carousel-background-image.loading {
-  opacity: 0.7;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .carousel-control-prev-icon,

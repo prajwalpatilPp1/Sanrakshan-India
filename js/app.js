@@ -248,10 +248,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function preloadCarouselImages() {
-        // Preload all carousel images for smooth transitions
-        siteData.carousel.forEach(slide => {
-            const img = new Image();
-            img.src = slide.image;
+        // Preload all carousel images for smooth transitions with priority
+        siteData.carousel.forEach((slide, index) => {
+            const link = document.createElement('link');
+            link.rel = index === 0 ? 'preload' : 'prefetch';
+            link.as = 'image';
+            link.href = slide.image;
+            if (index === 0) link.fetchpriority = 'high';
+            document.head.appendChild(link);
         });
     }
 
@@ -274,19 +278,19 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                     </div>
                     <div class="carousel-image-col">
-                        <div class="carousel-background-image loading" style="background-image: url('${slide.image}'); background-position: ${slide.imagePosition || 'center'}; background-size: ${slide.imageSize || 'cover'};"></div>
+                        <div class="carousel-background-image" style="background-image: url('${slide.image}'); background-position: ${slide.imagePosition || 'center'}; background-size: ${slide.imageSize || 'cover'}; will-change: transform;"></div>
                     </div>
                 </div>`;
 
             container.appendChild(slideDiv);
         });
 
-        // Remove loading class after images are loaded
-        setTimeout(() => {
-            document.querySelectorAll('.carousel-background-image.loading').forEach(el => {
-                el.classList.remove('loading');
+        // Trigger immediate paint
+        requestAnimationFrame(() => {
+            document.querySelectorAll('.carousel-background-image').forEach(el => {
+                el.style.opacity = '1';
             });
-        }, 100);
+        });
     }
 
     function renderFocusAreas() {
