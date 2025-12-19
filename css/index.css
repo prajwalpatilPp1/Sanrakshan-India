@@ -435,17 +435,24 @@ h6,
   .carousel-description-col {
     flex: 0 0 100%;
     clip-path: none;
-    height: auto;
-    min-height: auto;
-    max-height: none;
+    height: 140px;
+    min-height: 140px;
+    max-height: 140px;
     padding: 0.8rem 1rem;
   }
   
   .carousel-content-wrapper {
-    padding: 0.8rem 1rem;
-    height: auto;
-    overflow: visible;
+    padding: 0.6rem 0.8rem;
+    height: 100%;
+    overflow: hidden;
     max-height: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .carousel-content-wrapper * {
+    overflow: hidden !important;
   }
   
   .carousel-image-col {
@@ -470,23 +477,33 @@ h6,
   
   /* Smaller text for mobile */
   .carousel-item h1 {
-    font-size: 0.85rem;
-    line-height: 1.3;
-    margin-bottom: 0.4rem;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
   
   .carousel-item p {
-    font-size: 0.65rem;
-    line-height: 1.4;
+    font-size: 0.6rem;
+    line-height: 1.3;
     margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 }
 
 @media (max-width: 575.98px) {
   .carousel-description-col {
-    height: auto;
-    min-height: auto;
-    max-height: none;
+    height: 130px;
+    min-height: 130px;
+    max-height: 130px;
     padding: 0.7rem 0.9rem;
   }
   
@@ -496,22 +513,39 @@ h6,
   
   /* Even smaller text for small mobile */
   .carousel-item h1 {
-    font-size: 0.8rem;
-    line-height: 1.3;
-    margin-bottom: 0.35rem;
+    font-size: 0.7rem;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
   
   .carousel-item p {
-    font-size: 0.6rem;
-    line-height: 1.4;
+    font-size: 0.55rem;
+    line-height: 1.3;
     margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
   
   .carousel-content-wrapper {
-    padding: 0.7rem 0.9rem;
-    height: auto;
-    overflow: visible;
+    padding: 0.5rem 0.7rem;
+    height: 100%;
+    overflow: hidden;
     max-height: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .carousel-content-wrapper * {
+    overflow: hidden !important;
   }
 }
 
